@@ -70,5 +70,13 @@ namespace BanHangDienTU
             ClassMenu MN = new ClassMenu();
             MN.XoatrongGH();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Cart C = new Cart();
+            C.ShowDialog();
+            this.Close();
+
+        }
     }
 }

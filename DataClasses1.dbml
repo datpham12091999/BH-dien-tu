@@ -2,9 +2,9 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=BanHangDienTu;Integrated Security=True" SettingsObjectName="BanHangDienTU.Properties.Settings" SettingsPropertyName="BanHangDienTuConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CTDH" Member="CTDHs">
     <Type Name="CTDH">
-      <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaDonHang" Type="System.String" DbType="NChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaSanPham" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Gia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="KhuyenMai" Type="System.Single" DbType="Real" CanBeNull="true" />
       <Association Name="DonHang_CTDH" Member="DonHang" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="DonHang" IsForeignKey="true" />
@@ -21,14 +21,19 @@
   </Table>
   <Table Name="dbo.DonHang" Member="DonHangs">
     <Type Name="DonHang">
-      <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaDonHang" Type="System.String" DbType="NChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaKhachHang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="NgayMuaHang" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="ThanhTienDonHang" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="MaNhanVien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ThanhTienDonHang" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="DonHang_CTDH" Member="CTDHs" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="CTDH" />
       <Association Name="KhachHang_DonHang" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KhachHang" IsForeignKey="true" />
-      <Association Name="NhanVien_DonHang" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DSGH" Member="DSGHs">
+    <Type Name="DSGH">
+      <Column Name="TenSP" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GiaBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Số Lượng]" Member="Số_Lượng" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.KhachHang" Member="KhachHangs">
@@ -38,7 +43,7 @@
       <Column Name="DiaChi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="SDT" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Association Name="KhachHang_DangNhap" Member="DangNhaps" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="DangNhap" />
       <Association Name="KhachHang_DonHang" Member="DonHangs" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="DonHang" />
     </Type>
@@ -48,7 +53,6 @@
       <Column Name="MaLoaiSP" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenLoaiSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MoTa" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="HinhAnh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="LoaiSP_SanPham" Member="SanPhams" ThisKey="MaLoaiSP" OtherKey="LoaiSP" Type="SanPham" />
     </Type>
   </Table>
@@ -60,7 +64,6 @@
       <Column Name="DiaChi" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="SoDienThoai" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Association Name="NhanVien_DonHang" Member="DonHangs" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="DonHang" />
     </Type>
   </Table>
   <Table Name="dbo.SanPham" Member="SanPhams">
@@ -75,13 +78,6 @@
       <Column Name="HinhAnhSP" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="SanPham_CTDH" Member="CTDHs" ThisKey="MaSP" OtherKey="MaSanPham" Type="CTDH" />
       <Association Name="LoaiSP_SanPham" Member="LoaiSP1" ThisKey="LoaiSP" OtherKey="MaLoaiSP" Type="LoaiSP" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DSGH" Member="DSGHs">
-    <Type Name="DSGH">
-      <Column Name="TenSP" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="GiaBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="[Số Lượng]" Member="Số_Lượng" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.DemSoSP" Method="DemSoSP">
@@ -102,6 +98,20 @@
   </Function>
   <Function Name="dbo.TimSPtrung" Method="TimSPtrung" IsComposable="true">
     <Parameter Name="tensp" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TimMaSP" Method="TimMaSP">
+    <Parameter Name="tenSP" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TimKH" Method="TimKH">
+    <Parameter Name="TenKH" Parameter="tenKH" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="SDT" Parameter="sDT" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.LayMaKhachHang" Method="LayMaKhachHang">
+    <Parameter Name="tenKh" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="SDT" Parameter="sDT" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

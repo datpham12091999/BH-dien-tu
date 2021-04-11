@@ -30,5 +30,16 @@ namespace BanHangDienTU
             Kh.DiaChi = DiaChi;
             da.ThemTTKH(Kh);
         }
+        public void ThemKH(string HoTen, string DiaChi,  string Email, string SDT)
+        {
+            KhachHang Kh = new KhachHang();
+            Kh.HoTen = HoTen;
+            Kh.SDT = SDT;
+            Kh.Email = Email;
+            Kh.DiaChi = DiaChi;
+            da.ThemTTKH(Kh);
+
+        }
+
     }
 }

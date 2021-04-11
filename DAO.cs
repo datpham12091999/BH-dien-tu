@@ -97,6 +97,38 @@ namespace BanHangDienTU
             dh.Số_Lượng = (dh.Số_Lượng + 1);
             db.SubmitChanges();
         }
+        public void ChinhSuaSL (string tensp ,int SL)
+        {
+            DSGH dh = db.DSGHs.FirstOrDefault(s => s.TenSP.Equals(tensp));
+            dh.Số_Lượng = SL;
+            db.SubmitChanges();
+        }
+        public void ThemDH ( DonHang DH)
+        {
+            db.DonHangs.InsertOnSubmit(DH);
+            db.SubmitChanges();
+        }
+        public void THEMCTDH (CTDH CT )
+        {
+            db.CTDHs.InsertOnSubmit(CT);
+            db.SubmitChanges();
+        }
+        public int TimMaSanPham (string tensp)
+        {
+            int a = db.TimMaSP(tensp);
+            return a;
+        }
+        public int TimKH ( string HoTen ,string sdt)
+        {
+            int a = db.TimKH(HoTen, sdt);
+            return a;
+        }
+        public int LayMaKH ( string Hoten , string SDT )
+        {
+            int kq = db.LayMaKhachHang(Hoten, SDT);
+            return kq;
+        }
        
+
     }
 }

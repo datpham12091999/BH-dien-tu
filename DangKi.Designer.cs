@@ -138,6 +138,7 @@
             this.SDT.Name = "SDT";
             this.SDT.Size = new System.Drawing.Size(495, 22);
             this.SDT.TabIndex = 2;
+            this.SDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SDT_KeyPress);
             // 
             // Email
             // 

@@ -39,6 +39,9 @@ namespace BanHangDienTU
     partial void InsertDonHang(DonHang instance);
     partial void UpdateDonHang(DonHang instance);
     partial void DeleteDonHang(DonHang instance);
+    partial void InsertDSGH(DSGH instance);
+    partial void UpdateDSGH(DSGH instance);
+    partial void DeleteDSGH(DSGH instance);
     partial void InsertKhachHang(KhachHang instance);
     partial void UpdateKhachHang(KhachHang instance);
     partial void DeleteKhachHang(KhachHang instance);
@@ -51,9 +54,6 @@ namespace BanHangDienTU
     partial void InsertSanPham(SanPham instance);
     partial void UpdateSanPham(SanPham instance);
     partial void DeleteSanPham(SanPham instance);
-    partial void InsertDSGH(DSGH instance);
-    partial void UpdateDSGH(DSGH instance);
-    partial void DeleteDSGH(DSGH instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -110,6 +110,14 @@ namespace BanHangDienTU
 			}
 		}
 		
+		public System.Data.Linq.Table<DSGH> DSGHs
+		{
+			get
+			{
+				return this.GetTable<DSGH>();
+			}
+		}
+		
 		public System.Data.Linq.Table<KhachHang> KhachHangs
 		{
 			get
@@ -139,14 +147,6 @@ namespace BanHangDienTU
 			get
 			{
 				return this.GetTable<SanPham>();
-			}
-		}
-		
-		public System.Data.Linq.Table<DSGH> DSGHs
-		{
-			get
-			{
-				return this.GetTable<DSGH>();
 			}
 		}
 		
@@ -181,6 +181,27 @@ namespace BanHangDienTU
 		{
 			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tensp).ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimMaSP")]
+		public int TimMaSP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenSP)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenSP);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimKH")]
+		public int TimKH([global::System.Data.Linq.Mapping.ParameterAttribute(Name="TenKH", DbType="NVarChar(50)")] string tenKH, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SDT", DbType="NVarChar(50)")] string sDT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenKH, sDT);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayMaKhachHang")]
+		public int LayMaKhachHang([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenKh, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SDT", DbType="NVarChar(50)")] string sDT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenKh, sDT);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CTDH")]
@@ -189,11 +210,11 @@ namespace BanHangDienTU
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _MaDonHang;
+		private string _MaDonHang;
 		
 		private int _MaSanPham;
 		
-		private System.Nullable<decimal> _Gia;
+		private System.Nullable<int> _Gia;
 		
 		private System.Nullable<int> _SoLuong;
 		
@@ -207,11 +228,11 @@ namespace BanHangDienTU
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMaDonHangChanging(int value);
+    partial void OnMaDonHangChanging(string value);
     partial void OnMaDonHangChanged();
     partial void OnMaSanPhamChanging(int value);
     partial void OnMaSanPhamChanged();
-    partial void OnGiaChanging(System.Nullable<decimal> value);
+    partial void OnGiaChanging(System.Nullable<int> value);
     partial void OnGiaChanged();
     partial void OnSoLuongChanging(System.Nullable<int> value);
     partial void OnSoLuongChanged();
@@ -226,8 +247,8 @@ namespace BanHangDienTU
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonHang", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaDonHang
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonHang", DbType="NChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaDonHang
 		{
 			get
 			{
@@ -274,8 +295,8 @@ namespace BanHangDienTU
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gia", DbType="Money")]
-		public System.Nullable<decimal> Gia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gia", DbType="Int")]
+		public System.Nullable<int> Gia
 		{
 			get
 			{
@@ -361,7 +382,7 @@ namespace BanHangDienTU
 					}
 					else
 					{
-						this._MaDonHang = default(int);
+						this._MaDonHang = default(string);
 					}
 					this.SendPropertyChanged("DonHang");
 				}
@@ -580,48 +601,41 @@ namespace BanHangDienTU
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _MaDonHang;
+		private string _MaDonHang;
 		
 		private int _MaKhachHang;
 		
 		private System.Nullable<System.DateTime> _NgayMuaHang;
 		
-		private System.Nullable<decimal> _ThanhTienDonHang;
-		
-		private int _MaNhanVien;
+		private System.Nullable<int> _ThanhTienDonHang;
 		
 		private EntitySet<CTDH> _CTDHs;
 		
 		private EntityRef<KhachHang> _KhachHang;
 		
-		private EntityRef<NhanVien> _NhanVien;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMaDonHangChanging(int value);
+    partial void OnMaDonHangChanging(string value);
     partial void OnMaDonHangChanged();
     partial void OnMaKhachHangChanging(int value);
     partial void OnMaKhachHangChanged();
     partial void OnNgayMuaHangChanging(System.Nullable<System.DateTime> value);
     partial void OnNgayMuaHangChanged();
-    partial void OnThanhTienDonHangChanging(System.Nullable<decimal> value);
+    partial void OnThanhTienDonHangChanging(System.Nullable<int> value);
     partial void OnThanhTienDonHangChanged();
-    partial void OnMaNhanVienChanging(int value);
-    partial void OnMaNhanVienChanged();
     #endregion
 		
 		public DonHang()
 		{
 			this._CTDHs = new EntitySet<CTDH>(new Action<CTDH>(this.attach_CTDHs), new Action<CTDH>(this.detach_CTDHs));
 			this._KhachHang = default(EntityRef<KhachHang>);
-			this._NhanVien = default(EntityRef<NhanVien>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonHang", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaDonHang
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonHang", DbType="NChar(8) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaDonHang
 		{
 			get
 			{
@@ -684,8 +698,8 @@ namespace BanHangDienTU
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThanhTienDonHang", DbType="Money")]
-		public System.Nullable<decimal> ThanhTienDonHang
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThanhTienDonHang", DbType="Int")]
+		public System.Nullable<int> ThanhTienDonHang
 		{
 			get
 			{
@@ -700,30 +714,6 @@ namespace BanHangDienTU
 					this._ThanhTienDonHang = value;
 					this.SendPropertyChanged("ThanhTienDonHang");
 					this.OnThanhTienDonHangChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNhanVien", DbType="Int NOT NULL")]
-		public int MaNhanVien
-		{
-			get
-			{
-				return this._MaNhanVien;
-			}
-			set
-			{
-				if ((this._MaNhanVien != value))
-				{
-					if (this._NhanVien.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaNhanVienChanging(value);
-					this.SendPropertyChanging();
-					this._MaNhanVien = value;
-					this.SendPropertyChanged("MaNhanVien");
-					this.OnMaNhanVienChanged();
 				}
 			}
 		}
@@ -775,40 +765,6 @@ namespace BanHangDienTU
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_DonHang", Storage="_NhanVien", ThisKey="MaNhanVien", OtherKey="MaNhanVien", IsForeignKey=true)]
-		public NhanVien NhanVien
-		{
-			get
-			{
-				return this._NhanVien.Entity;
-			}
-			set
-			{
-				NhanVien previousValue = this._NhanVien.Entity;
-				if (((previousValue != value) 
-							|| (this._NhanVien.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._NhanVien.Entity = null;
-						previousValue.DonHangs.Remove(this);
-					}
-					this._NhanVien.Entity = value;
-					if ((value != null))
-					{
-						value.DonHangs.Add(this);
-						this._MaNhanVien = value.MaNhanVien;
-					}
-					else
-					{
-						this._MaNhanVien = default(int);
-					}
-					this.SendPropertyChanged("NhanVien");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -842,6 +798,116 @@ namespace BanHangDienTU
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DSGH")]
+	public partial class DSGH : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _TenSP;
+		
+		private System.Nullable<int> _GiaBan;
+		
+		private System.Nullable<int> _Số_Lượng;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTenSPChanging(string value);
+    partial void OnTenSPChanged();
+    partial void OnGiaBanChanging(System.Nullable<int> value);
+    partial void OnGiaBanChanged();
+    partial void OnSố_LượngChanging(System.Nullable<int> value);
+    partial void OnSố_LượngChanged();
+    #endregion
+		
+		public DSGH()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSP", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string TenSP
+		{
+			get
+			{
+				return this._TenSP;
+			}
+			set
+			{
+				if ((this._TenSP != value))
+				{
+					this.OnTenSPChanging(value);
+					this.SendPropertyChanging();
+					this._TenSP = value;
+					this.SendPropertyChanged("TenSP");
+					this.OnTenSPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaBan", DbType="Int")]
+		public System.Nullable<int> GiaBan
+		{
+			get
+			{
+				return this._GiaBan;
+			}
+			set
+			{
+				if ((this._GiaBan != value))
+				{
+					this.OnGiaBanChanging(value);
+					this.SendPropertyChanging();
+					this._GiaBan = value;
+					this.SendPropertyChanged("GiaBan");
+					this.OnGiaBanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Số Lượng]", Storage="_Số_Lượng", DbType="Int")]
+		public System.Nullable<int> Số_Lượng
+		{
+			get
+			{
+				return this._Số_Lượng;
+			}
+			set
+			{
+				if ((this._Số_Lượng != value))
+				{
+					this.OnSố_LượngChanging(value);
+					this.SendPropertyChanging();
+					this._Số_Lượng = value;
+					this.SendPropertyChanged("Số_Lượng");
+					this.OnSố_LượngChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KhachHang")]
 	public partial class KhachHang : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -858,7 +924,7 @@ namespace BanHangDienTU
 		
 		private string _SDT;
 		
-		private System.Nullable<System.DateTime> _NgaySinh;
+		private System.DateTime _NgaySinh;
 		
 		private EntitySet<DangNhap> _DangNhaps;
 		
@@ -878,7 +944,7 @@ namespace BanHangDienTU
     partial void OnEmailChanged();
     partial void OnSDTChanging(string value);
     partial void OnSDTChanged();
-    partial void OnNgaySinhChanging(System.Nullable<System.DateTime> value);
+    partial void OnNgaySinhChanging(System.DateTime value);
     partial void OnNgaySinhChanged();
     #endregion
 		
@@ -989,8 +1055,8 @@ namespace BanHangDienTU
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgaySinh", DbType="Date")]
-		public System.Nullable<System.DateTime> NgaySinh
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgaySinh", DbType="Date NOT NULL")]
+		public System.DateTime NgaySinh
 		{
 			get
 			{
@@ -1092,8 +1158,6 @@ namespace BanHangDienTU
 		
 		private string _MoTa;
 		
-		private System.Data.Linq.Binary _HinhAnh;
-		
 		private EntitySet<SanPham> _SanPhams;
 		
     #region Extensibility Method Definitions
@@ -1106,8 +1170,6 @@ namespace BanHangDienTU
     partial void OnTenLoaiSPChanged();
     partial void OnMoTaChanging(string value);
     partial void OnMoTaChanged();
-    partial void OnHinhAnhChanging(System.Data.Linq.Binary value);
-    partial void OnHinhAnhChanged();
     #endregion
 		
 		public LoaiSP()
@@ -1176,26 +1238,6 @@ namespace BanHangDienTU
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HinhAnh", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary HinhAnh
-		{
-			get
-			{
-				return this._HinhAnh;
-			}
-			set
-			{
-				if ((this._HinhAnh != value))
-				{
-					this.OnHinhAnhChanging(value);
-					this.SendPropertyChanging();
-					this._HinhAnh = value;
-					this.SendPropertyChanged("HinhAnh");
-					this.OnHinhAnhChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiSP_SanPham", Storage="_SanPhams", ThisKey="MaLoaiSP", OtherKey="LoaiSP")]
 		public EntitySet<SanPham> SanPhams
 		{
@@ -1260,8 +1302,6 @@ namespace BanHangDienTU
 		
 		private string _SoDienThoai;
 		
-		private EntitySet<DonHang> _DonHangs;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1282,7 +1322,6 @@ namespace BanHangDienTU
 		
 		public NhanVien()
 		{
-			this._DonHangs = new EntitySet<DonHang>(new Action<DonHang>(this.attach_DonHangs), new Action<DonHang>(this.detach_DonHangs));
 			OnCreated();
 		}
 		
@@ -1406,19 +1445,6 @@ namespace BanHangDienTU
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_DonHang", Storage="_DonHangs", ThisKey="MaNhanVien", OtherKey="MaNhanVien")]
-		public EntitySet<DonHang> DonHangs
-		{
-			get
-			{
-				return this._DonHangs;
-			}
-			set
-			{
-				this._DonHangs.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1437,18 +1463,6 @@ namespace BanHangDienTU
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_DonHangs(DonHang entity)
-		{
-			this.SendPropertyChanging();
-			entity.NhanVien = this;
-		}
-		
-		private void detach_DonHangs(DonHang entity)
-		{
-			this.SendPropertyChanging();
-			entity.NhanVien = null;
 		}
 	}
 	
@@ -1748,116 +1762,6 @@ namespace BanHangDienTU
 		{
 			this.SendPropertyChanging();
 			entity.SanPham = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DSGH")]
-	public partial class DSGH : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _TenSP;
-		
-		private System.Nullable<int> _GiaBan;
-		
-		private System.Nullable<int> _Số_Lượng;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTenSPChanging(string value);
-    partial void OnTenSPChanged();
-    partial void OnGiaBanChanging(System.Nullable<int> value);
-    partial void OnGiaBanChanged();
-    partial void OnSố_LượngChanging(System.Nullable<int> value);
-    partial void OnSố_LượngChanged();
-    #endregion
-		
-		public DSGH()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSP", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string TenSP
-		{
-			get
-			{
-				return this._TenSP;
-			}
-			set
-			{
-				if ((this._TenSP != value))
-				{
-					this.OnTenSPChanging(value);
-					this.SendPropertyChanging();
-					this._TenSP = value;
-					this.SendPropertyChanged("TenSP");
-					this.OnTenSPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaBan", DbType="Int")]
-		public System.Nullable<int> GiaBan
-		{
-			get
-			{
-				return this._GiaBan;
-			}
-			set
-			{
-				if ((this._GiaBan != value))
-				{
-					this.OnGiaBanChanging(value);
-					this.SendPropertyChanging();
-					this._GiaBan = value;
-					this.SendPropertyChanged("GiaBan");
-					this.OnGiaBanChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Số Lượng]", Storage="_Số_Lượng", DbType="Int")]
-		public System.Nullable<int> Số_Lượng
-		{
-			get
-			{
-				return this._Số_Lượng;
-			}
-			set
-			{
-				if ((this._Số_Lượng != value))
-				{
-					this.OnSố_LượngChanging(value);
-					this.SendPropertyChanging();
-					this._Số_Lượng = value;
-					this.SendPropertyChanged("Số_Lượng");
-					this.OnSố_LượngChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 }

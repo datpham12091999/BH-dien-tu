@@ -17,5 +17,9 @@ namespace BanHangDienTU
         {
             g.DataSource = da.ThemSPGH();
         }
+        public void ChinhSuaSL ( string tensp , int SL)
+        {
+            da.ChinhSuaSL(tensp, SL);
+        }
     }
 }

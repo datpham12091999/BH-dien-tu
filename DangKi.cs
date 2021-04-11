@@ -54,5 +54,12 @@ namespace BanHangDienTU
                 MessageBox.Show("Mat Khau hoac Ten Dang Nhap khong thoa dieu kien hoặc có thông tin  bị bỏ trống  ");
             }
         }
+
+        private void SDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+
+        }
     }
 }
