@@ -80,6 +80,16 @@
       <Association Name="LoaiSP_SanPham" Member="LoaiSP1" ThisKey="LoaiSP" OtherKey="MaLoaiSP" Type="LoaiSP" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.SuaChua" Member="SuaChuas">
+    <Type Name="SuaChua">
+      <Column Name="MaDonSuaChua" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenSPSuaChua" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayDatLich" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="MoTaTinhTrang" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Diachi" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SDT" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Function Name="dbo.DemSoSP" Method="DemSoSP">
     <Return Type="System.Int32" />
   </Function>

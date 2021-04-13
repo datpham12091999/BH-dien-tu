@@ -52,5 +52,14 @@ namespace BanHangDienTU
 
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormCTDH ct = new FormCTDH() ;
+            ct.MaDH = textBox1.Text;
+            ct.ShowDialog();
+            this.Close();
+        }
     }
 }

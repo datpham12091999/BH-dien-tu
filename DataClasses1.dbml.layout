@@ -57,21 +57,21 @@
         <classShapeMoniker Id="494cad20-ed7c-484d-b14c-82878513b00f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 7.0881982421875); (1.75 : 9.06814697265625); (3.5 : 9.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.75 : 7.0881982421875); (1.75 : 9.06814697265625); (3.5 : 9.06814697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/KhachHang/KhachHang_DangNhap" />
       <nodes>
         <classShapeMoniker Id="fc8a0591-ec8d-436a-a544-6511420a681a" />
         <classShapeMoniker Id="d6449a98-535b-41ca-a602-e351138c2286" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 6.16429768880208); (3.5 : 6.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 6.16429768880208); (3.5 : 6.16429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/KhachHang/KhachHang_DonHang" />
       <nodes>
         <classShapeMoniker Id="fc8a0591-ec8d-436a-a544-6511420a681a" />
         <classShapeMoniker Id="73c929f2-02ef-4d32-ab2a-a3653da5f85d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 2.13544840494792); (6.25 : 2.13544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 2.13544840494792); (6.25 : 2.13544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/SanPham/SanPham_CTDH" />
       <nodes>
         <classShapeMoniker Id="66047e9e-9374-4cdb-8a89-e94f617c49a7" />
@@ -85,5 +85,11 @@
         <classShapeMoniker Id="66047e9e-9374-4cdb-8a89-e94f617c49a7" />
       </nodes>
     </associationConnector>
+    <classShape Id="6627a945-eed1-42e2-8487-56f3759276e2" absoluteBounds="0.875, 3, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DataClasses1DataContext/SuaChua" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3074bec7-40e9-4e8c-8be9-fe7dcee99456" absoluteBounds="0.88999999999999968, 3.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

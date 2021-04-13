@@ -28,7 +28,7 @@ namespace BanHangDienTU
         {
             
                 SqlConnection con;
-                con = new SqlConnection("Data Source=DESKTOP-P6K7RH5;Initial Catalog=BanHangDienTu;User ID=sa;Password=1");
+                con = new SqlConnection("Data Source=DESKTOP-T0HJK4H;Initial Catalog=BanHangDienTu;User ID=sa;Password=1");
 
                 con.Open();
                 SqlCommand cmd;

@@ -177,6 +177,11 @@ namespace BanHangDienTU
             this.Hide();
             TK.ShowDialog();
         }
+
+        private void đặtLịchSửaChữaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

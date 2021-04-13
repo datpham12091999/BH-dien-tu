@@ -461,6 +461,7 @@
             this.đặtLịchSửaChữaToolStripMenuItem.Name = "đặtLịchSửaChữaToolStripMenuItem";
             this.đặtLịchSửaChữaToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.đặtLịchSửaChữaToolStripMenuItem.Text = "Đặt lịch Sửa Chữa";
+            this.đặtLịchSửaChữaToolStripMenuItem.Click += new System.EventHandler(this.đặtLịchSửaChữaToolStripMenuItem_Click);
             // 
             // Menu
             // 

@@ -63,6 +63,7 @@
     <Compile Include="ClassCTSP.cs" />
     <Compile Include="ClassGioHang.cs" />
     <Compile Include="ClassMenu.cs" />
+    <Compile Include="ClassSuaChua.cs" />
     <Compile Include="ClassThanhToan.cs" />
     <Compile Include="ClassTimKiem.cs" />
     <Compile Include="CTSP.cs">
@@ -90,6 +91,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DatLichSuaChua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatLichSuaChua.Designer.cs">
+      <DependentUpon>DatLichSuaChua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCTDH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCTDH.Designer.cs">
+      <DependentUpon>FormCTDH.cs</DependentUpon>
     </Compile>
     <Compile Include="TKDH.cs">
       <SubType>Form</SubType>
@@ -128,6 +141,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatLichSuaChua.resx">
+      <DependentUpon>DatLichSuaChua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCTDH.resx">
+      <DependentUpon>FormCTDH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TKDH.resx">
       <DependentUpon>TKDH.cs</DependentUpon>

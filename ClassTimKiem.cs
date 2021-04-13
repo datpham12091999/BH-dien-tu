@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BanHangDienTU
 {
@@ -46,5 +47,11 @@ namespace BanHangDienTU
             DateTime D = da.LayNgay(MaDH);
             return D;
         }
+        public void LayCTDH( DataGridView g , string MaDH)
+        {
+            g.DataSource = da.LayCTDH(MaDH);
+        }
+           
+         
     }
 }

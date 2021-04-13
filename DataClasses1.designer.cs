@@ -54,6 +54,9 @@ namespace BanHangDienTU
     partial void InsertSanPham(SanPham instance);
     partial void UpdateSanPham(SanPham instance);
     partial void DeleteSanPham(SanPham instance);
+    partial void InsertSuaChua(SuaChua instance);
+    partial void UpdateSuaChua(SuaChua instance);
+    partial void DeleteSuaChua(SuaChua instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -147,6 +150,14 @@ namespace BanHangDienTU
 			get
 			{
 				return this.GetTable<SanPham>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SuaChua> SuaChuas
+		{
+			get
+			{
+				return this.GetTable<SuaChua>();
 			}
 		}
 		
@@ -1802,6 +1813,188 @@ namespace BanHangDienTU
 		{
 			this.SendPropertyChanging();
 			entity.SanPham = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SuaChua")]
+	public partial class SuaChua : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaDonSuaChua;
+		
+		private string _TenSPSuaChua;
+		
+		private System.DateTime _NgayDatLich;
+		
+		private string _MoTaTinhTrang;
+		
+		private string _Diachi;
+		
+		private string _SDT;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaDonSuaChuaChanging(int value);
+    partial void OnMaDonSuaChuaChanged();
+    partial void OnTenSPSuaChuaChanging(string value);
+    partial void OnTenSPSuaChuaChanged();
+    partial void OnNgayDatLichChanging(System.DateTime value);
+    partial void OnNgayDatLichChanged();
+    partial void OnMoTaTinhTrangChanging(string value);
+    partial void OnMoTaTinhTrangChanged();
+    partial void OnDiachiChanging(string value);
+    partial void OnDiachiChanged();
+    partial void OnSDTChanging(string value);
+    partial void OnSDTChanged();
+    #endregion
+		
+		public SuaChua()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonSuaChua", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaDonSuaChua
+		{
+			get
+			{
+				return this._MaDonSuaChua;
+			}
+			set
+			{
+				if ((this._MaDonSuaChua != value))
+				{
+					this.OnMaDonSuaChuaChanging(value);
+					this.SendPropertyChanging();
+					this._MaDonSuaChua = value;
+					this.SendPropertyChanged("MaDonSuaChua");
+					this.OnMaDonSuaChuaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSPSuaChua", DbType="NChar(50) NOT NULL", CanBeNull=false)]
+		public string TenSPSuaChua
+		{
+			get
+			{
+				return this._TenSPSuaChua;
+			}
+			set
+			{
+				if ((this._TenSPSuaChua != value))
+				{
+					this.OnTenSPSuaChuaChanging(value);
+					this.SendPropertyChanging();
+					this._TenSPSuaChua = value;
+					this.SendPropertyChanged("TenSPSuaChua");
+					this.OnTenSPSuaChuaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayDatLich", DbType="Date NOT NULL")]
+		public System.DateTime NgayDatLich
+		{
+			get
+			{
+				return this._NgayDatLich;
+			}
+			set
+			{
+				if ((this._NgayDatLich != value))
+				{
+					this.OnNgayDatLichChanging(value);
+					this.SendPropertyChanging();
+					this._NgayDatLich = value;
+					this.SendPropertyChanged("NgayDatLich");
+					this.OnNgayDatLichChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoTaTinhTrang", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string MoTaTinhTrang
+		{
+			get
+			{
+				return this._MoTaTinhTrang;
+			}
+			set
+			{
+				if ((this._MoTaTinhTrang != value))
+				{
+					this.OnMoTaTinhTrangChanging(value);
+					this.SendPropertyChanging();
+					this._MoTaTinhTrang = value;
+					this.SendPropertyChanged("MoTaTinhTrang");
+					this.OnMoTaTinhTrangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diachi", DbType="NChar(50) NOT NULL", CanBeNull=false)]
+		public string Diachi
+		{
+			get
+			{
+				return this._Diachi;
+			}
+			set
+			{
+				if ((this._Diachi != value))
+				{
+					this.OnDiachiChanging(value);
+					this.SendPropertyChanging();
+					this._Diachi = value;
+					this.SendPropertyChanged("Diachi");
+					this.OnDiachiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDT", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string SDT
+		{
+			get
+			{
+				return this._SDT;
+			}
+			set
+			{
+				if ((this._SDT != value))
+				{
+					this.OnSDTChanging(value);
+					this.SendPropertyChanging();
+					this._SDT = value;
+					this.SendPropertyChanged("SDT");
+					this.OnSDTChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

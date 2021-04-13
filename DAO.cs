@@ -160,6 +160,25 @@ namespace BanHangDienTU
             DateTime D =DateTime.Parse(db.LayNgayDatHang(MaDH).ToString());
             return D;
         }
+        public dynamic LayCTDH(string MaDH)
+        {
+
+            var CTPM = db.CTDHs.Where(s => s.MaDonHang.Equals(MaDH)).Select(p => new
+            {
+                p.SanPham.TenSP,
+                p.SoLuong,
+                p.Gia
+
+            }) ;
+            return CTPM;
+
+        }
+        public void ThemLichSuaChua (SuaChua SC )
+        {
+            db.SuaChuas.InsertOnSubmit(SC);
+            db.SubmitChanges();
+        }
+        
        
 
     }

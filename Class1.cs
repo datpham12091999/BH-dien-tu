@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BanHangDienTU
 {
-    public class Class1
+    class Class1
     {
         public bool KiemTraDangKi(string dangnhap, string matkhau)
         {
