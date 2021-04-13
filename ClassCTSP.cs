@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BanHangDienTU
 {
-    class ClassCTSP
+    /*public*/ class ClassCTSP
     {
         DAO da;
         public ClassCTSP()
