@@ -18,6 +18,11 @@ namespace BanHangDienTU
             InitializeComponent();
         }
         ClassMenu MN = new ClassMenu();
+        PictureBox[] PB = new PictureBox[10];
+        Label[] TenSP;
+        Label[] GiaSP;
+
+
 
 
         private void sanPhamBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -33,7 +38,6 @@ namespace BanHangDienTU
             
             
             int a = MN.DemSoHinh();
-            PictureBox[] PB = new PictureBox[10];
             PB[0] = Hinh1;
             PB[1] = Hinh2;
             PB[2] = Hinh3;
@@ -48,8 +52,8 @@ namespace BanHangDienTU
             {
                 MN.hienthihinhanh(PB[i], i + 1);
             }
-            Label[] TenSP = new Label[] { Ten1 ,Ten2 , Ten3, Ten4 , Ten5 , Ten6 , Ten7 , Ten8 , Ten9 , Ten10 };
-            Label[] GiaSP = new Label[] { Gia1, Gia2, Gia3 , Gia4 , Gia5 , Gia6 , Gia7 , Gia8 , Gia9 , Gia10 };
+             TenSP = new Label[] { Ten1 ,Ten2 , Ten3, Ten4 , Ten5 , Ten6 , Ten7 , Ten8 , Ten9 , Ten10 };
+             GiaSP = new Label[] { Gia1, Gia2, Gia3 , Gia4 , Gia5 , Gia6 , Gia7 , Gia8 , Gia9 , Gia10 };
             for ( int i = 0; i < TenSP.Length; i++)
             {
                 MN.HienThiGiavaTenSP(i +1 , TenSP[i], GiaSP[i]);
@@ -158,5 +162,23 @@ namespace BanHangDienTU
             MN.XoatrongGH();
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TimKiem f = new TimKiem();
+            f.TK = textBox1.Text;
+            f.ShowDialog();
+        }
+
+        private void traCứuĐHToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TKDH TK = new TKDH();
+            this.Hide();
+            TK.ShowDialog();
+        }
     }
+
 }
+    
+

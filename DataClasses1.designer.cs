@@ -30,6 +30,9 @@ namespace BanHangDienTU
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertDSGH(DSGH instance);
+    partial void UpdateDSGH(DSGH instance);
+    partial void DeleteDSGH(DSGH instance);
     partial void InsertCTDH(CTDH instance);
     partial void UpdateCTDH(CTDH instance);
     partial void DeleteCTDH(CTDH instance);
@@ -39,9 +42,6 @@ namespace BanHangDienTU
     partial void InsertDonHang(DonHang instance);
     partial void UpdateDonHang(DonHang instance);
     partial void DeleteDonHang(DonHang instance);
-    partial void InsertDSGH(DSGH instance);
-    partial void UpdateDSGH(DSGH instance);
-    partial void DeleteDSGH(DSGH instance);
     partial void InsertKhachHang(KhachHang instance);
     partial void UpdateKhachHang(KhachHang instance);
     partial void DeleteKhachHang(KhachHang instance);
@@ -86,6 +86,14 @@ namespace BanHangDienTU
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<DSGH> DSGHs
+		{
+			get
+			{
+				return this.GetTable<DSGH>();
+			}
+		}
+		
 		public System.Data.Linq.Table<CTDH> CTDHs
 		{
 			get
@@ -107,14 +115,6 @@ namespace BanHangDienTU
 			get
 			{
 				return this.GetTable<DonHang>();
-			}
-		}
-		
-		public System.Data.Linq.Table<DSGH> DSGHs
-		{
-			get
-			{
-				return this.GetTable<DSGH>();
 			}
 		}
 		
@@ -164,28 +164,24 @@ namespace BanHangDienTU
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimGiaBan", IsComposable=true)]
-		public System.Nullable<int> TimGiaBan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> ma)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayMaKhachHang")]
+		public int LayMaKhachHang([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenKh, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SDT", DbType="NVarChar(50)")] string sDT)
 		{
-			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma).ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenKh, sDT);
+			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimTenSP", IsComposable=true)]
-		public string TimTenSP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> ma)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayMaSanPham")]
+		public int LayMaSanPham([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tensp)
 		{
-			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma).ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tensp);
+			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimSPtrung", IsComposable=true)]
-		public System.Nullable<int> TimSPtrung([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tensp)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayThanhTien")]
+		public int LayThanhTien([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDH", DbType="NVarChar(8)")] string maDH)
 		{
-			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tensp).ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimMaSP")]
-		public int TimMaSP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenSP)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenSP);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDH);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -196,11 +192,165 @@ namespace BanHangDienTU
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayMaKhachHang")]
-		public int LayMaKhachHang([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenKh, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SDT", DbType="NVarChar(50)")] string sDT)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimLinhKien")]
+		public int TimLinhKien([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string name)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenKh, sDT);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimMaDH")]
+		public int TimMaDH([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDH", DbType="NVarChar(100)")] string maDH)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDH);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimMaSP")]
+		public int TimMaSP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenSP)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenSP);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayNgayDatHang", IsComposable=true)]
+		public System.Nullable<System.DateTime> LayNgayDatHang([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDH", DbType="NVarChar(8)")] string maDH)
+		{
+			return ((System.Nullable<System.DateTime>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDH).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimGiaBan", IsComposable=true)]
+		public System.Nullable<int> TimGiaBan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> ma)
+		{
+			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimSPtrung", IsComposable=true)]
+		public System.Nullable<int> TimSPtrung([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tensp)
+		{
+			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tensp).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimTenSP", IsComposable=true)]
+		public string TimTenSP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> ma)
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayMaDH", IsComposable=true)]
+		public string LayMaDH([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDH", DbType="NVarChar(50)")] string maDH)
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDH).ReturnValue));
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DSGH")]
+	public partial class DSGH : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _TenSP;
+		
+		private System.Nullable<int> _GiaBan;
+		
+		private System.Nullable<int> _Số_Lượng;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTenSPChanging(string value);
+    partial void OnTenSPChanged();
+    partial void OnGiaBanChanging(System.Nullable<int> value);
+    partial void OnGiaBanChanged();
+    partial void OnSố_LượngChanging(System.Nullable<int> value);
+    partial void OnSố_LượngChanged();
+    #endregion
+		
+		public DSGH()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSP", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string TenSP
+		{
+			get
+			{
+				return this._TenSP;
+			}
+			set
+			{
+				if ((this._TenSP != value))
+				{
+					this.OnTenSPChanging(value);
+					this.SendPropertyChanging();
+					this._TenSP = value;
+					this.SendPropertyChanged("TenSP");
+					this.OnTenSPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaBan", DbType="Int")]
+		public System.Nullable<int> GiaBan
+		{
+			get
+			{
+				return this._GiaBan;
+			}
+			set
+			{
+				if ((this._GiaBan != value))
+				{
+					this.OnGiaBanChanging(value);
+					this.SendPropertyChanging();
+					this._GiaBan = value;
+					this.SendPropertyChanged("GiaBan");
+					this.OnGiaBanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Số Lượng]", Storage="_Số_Lượng", DbType="Int")]
+		public System.Nullable<int> Số_Lượng
+		{
+			get
+			{
+				return this._Số_Lượng;
+			}
+			set
+			{
+				if ((this._Số_Lượng != value))
+				{
+					this.OnSố_LượngChanging(value);
+					this.SendPropertyChanging();
+					this._Số_Lượng = value;
+					this.SendPropertyChanged("Số_Lượng");
+					this.OnSố_LượngChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -450,11 +600,11 @@ namespace BanHangDienTU
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
+		private int _MaKhachHang;
+		
 		private string _DangNhap1;
 		
 		private string _MatKhau;
-		
-		private int _MaKhachHang;
 		
 		private EntityRef<KhachHang> _KhachHang;
 		
@@ -462,18 +612,42 @@ namespace BanHangDienTU
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
+    partial void OnMaKhachHangChanging(int value);
+    partial void OnMaKhachHangChanged();
     partial void OnDangNhap1Changing(string value);
     partial void OnDangNhap1Changed();
     partial void OnMatKhauChanging(string value);
     partial void OnMatKhauChanged();
-    partial void OnMaKhachHangChanging(int value);
-    partial void OnMaKhachHangChanged();
     #endregion
 		
 		public DangNhap()
 		{
 			this._KhachHang = default(EntityRef<KhachHang>);
 			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKhachHang", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MaKhachHang
+		{
+			get
+			{
+				return this._MaKhachHang;
+			}
+			set
+			{
+				if ((this._MaKhachHang != value))
+				{
+					if (this._KhachHang.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaKhachHangChanging(value);
+					this.SendPropertyChanging();
+					this._MaKhachHang = value;
+					this.SendPropertyChanged("MaKhachHang");
+					this.OnMaKhachHangChanged();
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="DangNhap", Storage="_DangNhap1", DbType="NChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
@@ -512,30 +686,6 @@ namespace BanHangDienTU
 					this._MatKhau = value;
 					this.SendPropertyChanged("MatKhau");
 					this.OnMatKhauChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKhachHang", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaKhachHang
-		{
-			get
-			{
-				return this._MaKhachHang;
-			}
-			set
-			{
-				if ((this._MaKhachHang != value))
-				{
-					if (this._KhachHang.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaKhachHangChanging(value);
-					this.SendPropertyChanging();
-					this._MaKhachHang = value;
-					this.SendPropertyChanged("MaKhachHang");
-					this.OnMaKhachHangChanged();
 				}
 			}
 		}
@@ -795,116 +945,6 @@ namespace BanHangDienTU
 		{
 			this.SendPropertyChanging();
 			entity.DonHang = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DSGH")]
-	public partial class DSGH : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _TenSP;
-		
-		private System.Nullable<int> _GiaBan;
-		
-		private System.Nullable<int> _Số_Lượng;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTenSPChanging(string value);
-    partial void OnTenSPChanged();
-    partial void OnGiaBanChanging(System.Nullable<int> value);
-    partial void OnGiaBanChanged();
-    partial void OnSố_LượngChanging(System.Nullable<int> value);
-    partial void OnSố_LượngChanged();
-    #endregion
-		
-		public DSGH()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSP", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string TenSP
-		{
-			get
-			{
-				return this._TenSP;
-			}
-			set
-			{
-				if ((this._TenSP != value))
-				{
-					this.OnTenSPChanging(value);
-					this.SendPropertyChanging();
-					this._TenSP = value;
-					this.SendPropertyChanged("TenSP");
-					this.OnTenSPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaBan", DbType="Int")]
-		public System.Nullable<int> GiaBan
-		{
-			get
-			{
-				return this._GiaBan;
-			}
-			set
-			{
-				if ((this._GiaBan != value))
-				{
-					this.OnGiaBanChanging(value);
-					this.SendPropertyChanging();
-					this._GiaBan = value;
-					this.SendPropertyChanged("GiaBan");
-					this.OnGiaBanChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Số Lượng]", Storage="_Số_Lượng", DbType="Int")]
-		public System.Nullable<int> Số_Lượng
-		{
-			get
-			{
-				return this._Số_Lượng;
-			}
-			set
-			{
-				if ((this._Số_Lượng != value))
-				{
-					this.OnSố_LượngChanging(value);
-					this.SendPropertyChanging();
-					this._Số_Lượng = value;
-					this.SendPropertyChanged("Số_Lượng");
-					this.OnSố_LượngChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	

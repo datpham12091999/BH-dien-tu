@@ -16,7 +16,7 @@ namespace BanHangDienTU
         {
             InitializeComponent();
         }
-        int KTDN = 0;
+        
         ClassGioHang c = new ClassGioHang();
         ClassThanhToan TT = new ClassThanhToan();
         private void ThanhToan_Load(object sender, EventArgs e)
@@ -27,11 +27,14 @@ namespace BanHangDienTU
             {
                 int n = int.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString());
                 int SL = int.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString());
+                dataGridView1.Rows[i].ReadOnly  = true;
+
 
                 ThanhTienSP = ThanhTienSP + (n * SL);
             }
             lbThanhTien.Text = ThanhTienSP.ToString() ;
             label8.Text = " VND";
+            
 
         }
 
@@ -41,13 +44,19 @@ namespace BanHangDienTU
             int a = TT.TimKH(txtHoTen.Text, TXTSDT.Text);
             if ( a == 0)
             {
+                Random ra = new Random();
+                string KiTu = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                string random;
+                int c = ra.Next(0, KiTu.Length); //string.Lenght gets the size of string
+                random = KiTu.ElementAt(c).ToString();
                 Random rd = new Random();
-                int MaDH = rd.Next(1000000, 9999999);
+                int MaRadom = rd.Next(1000000, 9999999);
+                String MaDH = random + MaRadom;
                 DangKy DK = new DangKy();
                 DK.ThemKH(txtHoTen.Text, TXTdiachi.Text, TXTEmail.Text, TXTSDT.Text);
                 int MaKh = TT.LayMaKH(txtHoTen.Text, TXTSDT.Text);
-                TT.ThemDH(MaKh,MaDH.ToString(),int.Parse(lbThanhTien.Text), dataGridView1);
-                MessageBox.Show("Thanh Toan Thanh Cong");
+                TT.ThemDH(MaKh,MaDH,int.Parse(lbThanhTien.Text), dataGridView1);
+                MessageBox.Show("Thanh Toan Thanh Cong" + "Mã Đơn Hàng Của Bạn Là :" + MaDH);
                 Menu MN = new Menu();
                 MN.ShowDialog();
                 this.Close();
@@ -56,14 +65,18 @@ namespace BanHangDienTU
             }
             else
             {
-                //string KiTu= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                //string random = 
+                Random ra = new Random();
+                string KiTu= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                string random;
+                int c = ra.Next(0 ,KiTu.Length); //string.Lenght gets the size of string
+                random =  KiTu.ElementAt(c).ToString();
 
                 Random rd = new Random();
-                int MaDH = rd.Next(1000000, 9999999);
+                int MaRadom = rd.Next(1000000, 9999999);
+                String MaDH = random + MaRadom;
                 int MaKh = TT.LayMaKH(txtHoTen.Text, TXTSDT.Text);
-                TT.ThemDH(MaKh, MaDH.ToString(), int.Parse(lbThanhTien.Text), dataGridView1);
-                MessageBox.Show("Thanh Toan Thanh Cong");
+                TT.ThemDH(MaKh, MaDH, int.Parse(lbThanhTien.Text), dataGridView1);
+                MessageBox.Show("Thanh Toan Thanh Cong"  + "Mã Đơn Hàng Của Bạn Là :" + MaDH);
                 Menu MN = new Menu();
                 MN.ShowDialog();
                 this.Close();

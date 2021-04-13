@@ -16,7 +16,7 @@ namespace BanHangDienTU
         {
             InitializeComponent();
         }
-
+        ClassThanhToan TT = new ClassThanhToan();
         private void DangKi_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
@@ -42,6 +42,7 @@ namespace BanHangDienTU
                 DN.DangNhap1 = textBox1.Text;
                 DN.MatKhau = textBox2.Text;
                 Dk.ThemKH(HoTen.Text, DiaChi.Text, NgaySinh.Value.Date, Email.Text, SDT.Text);
+                DN.MaKhachHang = TT.LayMaKH(HoTen.Text, SDT.Text);
                 Dk.DangKyTK(DN);
                 MessageBox.Show(" Dang Ky Thanh Cong");
                 this.Hide();

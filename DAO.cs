@@ -128,6 +128,38 @@ namespace BanHangDienTU
             int kq = db.LayMaKhachHang(Hoten, SDT);
             return kq;
         }
+        public int TimLK ( string Tensp)
+        {
+            int a = db.TimLinhKien(Tensp);
+            return a;
+        }
+        public int LayMaSP ( string tensp)
+        {
+            int a = db.LayMaSanPham(tensp);
+            return a;
+            
+        }
+        public int KTMDH (string MaDH)
+        {
+            int a = db.TimMaDH(MaDH);
+            return a;           
+        }
+        public int LayThanhTien ( string MaDH )
+        {
+            int s = db.LayThanhTien(MaDH);
+            return s;
+        }
+        public string LayMDH ( string MaDH)
+        {
+            string s = db.LayMaDH(MaDH);
+            return s;
+
+        }
+        public DateTime LayNgay ( string MaDH)
+        {
+            DateTime D =DateTime.Parse(db.LayNgayDatHang(MaDH).ToString());
+            return D;
+        }
        
 
     }

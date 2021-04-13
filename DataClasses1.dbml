@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BanHangDienTu" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=BanHangDienTu;Integrated Security=True" SettingsObjectName="BanHangDienTU.Properties.Settings" SettingsPropertyName="BanHangDienTuConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DSGH" Member="DSGHs">
+    <Type Name="DSGH">
+      <Column Name="TenSP" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GiaBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Số Lượng]" Member="Số_Lượng" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.CTDH" Member="CTDHs">
     <Type Name="CTDH">
       <Column Name="MaDonHang" Type="System.String" DbType="NChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -13,9 +20,9 @@
   </Table>
   <Table Name="dbo.DangNhap" Member="DangNhaps">
     <Type Name="DangNhap">
+      <Column Name="MaKhachHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="DangNhap" Member="DangNhap1" Type="System.String" DbType="NChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MatKhau" Type="System.String" DbType="NChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="MaKhachHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="KhachHang_DangNhap" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KhachHang" IsForeignKey="true" />
     </Type>
   </Table>
@@ -27,13 +34,6 @@
       <Column Name="ThanhTienDonHang" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="DonHang_CTDH" Member="CTDHs" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="CTDH" />
       <Association Name="KhachHang_DonHang" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KhachHang" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DSGH" Member="DSGHs">
-    <Type Name="DSGH">
-      <Column Name="TenSP" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="GiaBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="[Số Lượng]" Member="Số_Lượng" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.KhachHang" Member="KhachHangs">
@@ -88,20 +88,17 @@
     <Parameter Name="matkhau" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.TimGiaBan" Method="TimGiaBan" IsComposable="true">
-    <Parameter Name="ma" Type="System.Int32" DbType="Int" />
+  <Function Name="dbo.LayMaKhachHang" Method="LayMaKhachHang">
+    <Parameter Name="tenKh" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="SDT" Parameter="sDT" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.TimTenSP" Method="TimTenSP" IsComposable="true">
-    <Parameter Name="ma" Type="System.Int32" DbType="Int" />
-    <Return Type="System.String" />
-  </Function>
-  <Function Name="dbo.TimSPtrung" Method="TimSPtrung" IsComposable="true">
+  <Function Name="dbo.LayMaSanPham" Method="LayMaSanPham">
     <Parameter Name="tensp" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.TimMaSP" Method="TimMaSP">
-    <Parameter Name="tenSP" Type="System.String" DbType="NVarChar(50)" />
+  <Function Name="dbo.LayThanhTien" Method="LayThanhTien">
+    <Parameter Name="MaDH" Parameter="maDH" Type="System.String" DbType="NVarChar(8)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.TimKH" Method="TimKH">
@@ -109,9 +106,36 @@
     <Parameter Name="SDT" Parameter="sDT" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.LayMaKhachHang" Method="LayMaKhachHang">
-    <Parameter Name="tenKh" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="SDT" Parameter="sDT" Type="System.String" DbType="NVarChar(50)" />
+  <Function Name="dbo.TimLinhKien" Method="TimLinhKien">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TimMaDH" Method="TimMaDH">
+    <Parameter Name="MaDH" Parameter="maDH" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TimMaSP" Method="TimMaSP">
+    <Parameter Name="tenSP" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.LayNgayDatHang" Method="LayNgayDatHang" IsComposable="true">
+    <Parameter Name="MaDH" Parameter="maDH" Type="System.String" DbType="NVarChar(8)" />
+    <Return Type="System.DateTime" />
+  </Function>
+  <Function Name="dbo.TimGiaBan" Method="TimGiaBan" IsComposable="true">
+    <Parameter Name="ma" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TimSPtrung" Method="TimSPtrung" IsComposable="true">
+    <Parameter Name="tensp" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TimTenSP" Method="TimTenSP" IsComposable="true">
+    <Parameter Name="ma" Type="System.Int32" DbType="Int" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.LayMaDH" Method="LayMaDH" IsComposable="true">
+    <Parameter Name="MaDH" Parameter="maDH" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
   </Function>
 </Database>
