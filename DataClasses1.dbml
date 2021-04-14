@@ -152,4 +152,12 @@
     <Parameter Name="tentk" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.TimKiemSanPham" Method="TimKiemSanPham">
+    <Parameter Name="TenSP" Parameter="tenSP" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="TimKiemSanPhamResult">
+      <Column Name="TenSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GiaBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>
