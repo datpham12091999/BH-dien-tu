@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace BanHangDienTU
 {
-    class ClassThanhToan
+    public class ClassThanhToan
     {
         DAO da;
         public ClassThanhToan()
