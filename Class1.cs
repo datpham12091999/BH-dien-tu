@@ -8,12 +8,19 @@ namespace BanHangDienTU
 {
     class Class1
     {
+        DAO da;
+        public Class1()
+        {
+            da = new DAO();
+            
+        }
         public bool KiemTraDangKi(string dangnhap, string matkhau)
         {
             int a = dangnhap.Length;
             int b = matkhau.Length;
             int hoa = 0;
             int so = 0;
+            int thuong = 0;
             if (a < 8 || b < 8)
             {
                 return false;
@@ -25,13 +32,22 @@ namespace BanHangDienTU
                     hoa = 1;
                 if (matkhau[i] >= '0' && matkhau[i] <= '9')
                     so = 1;
-                if (hoa == 1 && so == 1)
+                if (matkhau[i] >= 'a' && matkhau[i] <= 'z')
+                    thuong = 1;
+                if (hoa == 1 && so == 1 && thuong == 1)
                 {
                     return true;
                 }
                
             }
             return false;
+
+        }
+        public int KiemTraTK (string TenTk )
+        {
+            int a = da.TimTKTRUNG(TenTk);
+            return a;
+
 
         }
     }

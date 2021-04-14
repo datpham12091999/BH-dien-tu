@@ -31,6 +31,15 @@ namespace BanHangDienTU
 
             int ThanhTienSP = 0;
             C.LaySP(dataGridView1);
+            if ( dataGridView1.Rows.Count == 0)
+            {
+                dataGridView1.Visible = false;
+                Thongbao.Visible = true;
+                Thongbao.Text = " Gio Hang Trong";
+                Btthanhtoan.Visible = false;
+                btcapnhat.Visible = false;
+                
+            }
            for ( int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 int n =int.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString());
