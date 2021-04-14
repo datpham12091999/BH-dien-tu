@@ -60,6 +60,14 @@ namespace BanHangDienTU
             {
                 MessageBox.Show(" Vui long dien vao tat ca thong tin");
             }
+            else if (KT == false)
+            {
+                MessageBox.Show(" Mat Khau khong hop le phai co 1 chu hoa va 1 chu thuong va 1 chu so va co 8 ki tu tro len ");
+            }
+            else if ( KQ == 1 )
+            {
+                MessageBox.Show(" ten TK bi trung moi nhap Ten TK khac");
+            }
         }
 
         private void SDT_KeyPress(object sender, KeyPressEventArgs e)

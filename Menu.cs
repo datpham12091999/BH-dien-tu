@@ -165,10 +165,19 @@ namespace BanHangDienTU
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            TimKiem f = new TimKiem();
-            f.TK = textBox1.Text;
-            f.ShowDialog();
+            if ( textBox1.Text =="")
+            {
+                MessageBox.Show("Vui lòng không để trống thanh tìm kiếm ");
+            }
+            else
+            {
+                this.Hide();
+                TimKiem f = new TimKiem();
+                f.TK = textBox1.Text;
+                f.ShowDialog();
+
+            }
+           
         }
 
         private void traCứuĐHToolStripMenuItem_Click(object sender, EventArgs e)

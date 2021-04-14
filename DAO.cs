@@ -7,7 +7,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Security.Permissions;
-
+using System.Windows.Forms;
 namespace BanHangDienTU
 {
     class DAO
@@ -182,6 +182,12 @@ namespace BanHangDienTU
         {
             int kq = db.TimTaiKhoan(TenTK);
             return kq;
+        }
+        public void TimKiemSP (DataGridView g , string TenSP)
+        {
+            g.DataSource = db.TimKiemSanPham(TenSP);
+
+
         }
         
        
