@@ -34,7 +34,8 @@ namespace BanHangDienTU
 
             Class1 Kiemtra = new Class1();
             bool KT = Kiemtra.KiemTraDangKi(textBox1.Text, textBox2.Text);
-            if ( KT == true && SDT.Text != "" && Email.Text != "" && DiaChi.Text != "" && HoTen.Text != "")
+            int KQ = Kiemtra.KiemTraTK(textBox1.Text);
+            if ( textBox1.Text != "" && textBox2.Text != ""  && KT == true && SDT.Text != "" && Email.Text != "" && DiaChi.Text != "" && HoTen.Text != "" && KQ == 0 && SDT.Text.Length == 10)
             {
                 DangKy Dk = new DangKy();
                 DangNhap DN;
@@ -50,9 +51,14 @@ namespace BanHangDienTU
                 f.ShowDialog();
                 this.Close();
             }
-            else
+            else if (SDT.Text.Length < 10 | SDT.Text.Length > 10 )
             {
-                MessageBox.Show("Mat Khau hoac Ten Dang Nhap khong thoa dieu kien hoặc có thông tin  bị bỏ trống  ");
+                MessageBox.Show("SDT phai la 10 so");
+
+            }
+            else if (SDT.Text == "" | Email.Text == "" | DiaChi.Text == "" | HoTen.Text == "" | textBox1.Text == "" | textBox2.Text == "")
+            {
+                MessageBox.Show(" Vui long dien vao tat ca thong tin");
             }
         }
 

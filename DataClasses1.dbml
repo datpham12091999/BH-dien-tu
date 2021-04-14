@@ -148,4 +148,8 @@
     <Parameter Name="MaDH" Parameter="maDH" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.String" />
   </Function>
+  <Function Name="dbo.TimTaiKhoan" Method="TimTaiKhoan">
+    <Parameter Name="tentk" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

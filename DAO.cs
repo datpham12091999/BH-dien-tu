@@ -178,6 +178,11 @@ namespace BanHangDienTU
             db.SuaChuas.InsertOnSubmit(SC);
             db.SubmitChanges();
         }
+        public  int TimTKTRUNG (string TenTK)
+        {
+            int kq = db.TimTaiKhoan(TenTK);
+            return kq;
+        }
         
        
 
