@@ -77,9 +77,6 @@ namespace BanHangDienTU
                 tensp = dataGridView1.Rows[e.RowIndex].Cells["TenSP"].Value.ToString();
                  soluong =dataGridView1.Rows[e.RowIndex].Cells["Số_Lượng"].Value.ToString();
                  N = int.Parse(soluong);
-                
-
-
             }
 
         }
@@ -155,9 +152,17 @@ namespace BanHangDienTU
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            C.XoaSP(tensp);
-            C.LaySP(dataGridView1);
-            Cart_Load(sender, e);
+            if ( tensp == null)
+            {
+                MessageBox.Show("moi chon san pham can xoa");
+            }
+            else
+            {
+                C.XoaSP(tensp);
+                C.LaySP(dataGridView1);
+                Cart_Load(sender, e);
+            }
+          
         }
     }
 }

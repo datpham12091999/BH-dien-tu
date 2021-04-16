@@ -108,5 +108,13 @@ namespace BanHangDienTU
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Cart c = new Cart();
+            c.ShowDialog();
+            this.Close();
+        }
     }
 }
