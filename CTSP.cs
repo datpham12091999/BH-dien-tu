@@ -26,6 +26,18 @@ namespace BanHangDienTU
             ClassMenu MN = new ClassMenu();
             MN.hienthihinhanh(Hinh1, ma);
             MN.HienThiGiavaTenSP(ma, Ten1,Gia1);
+            int SL = CTSP1.LaySoLuongSP(ma);
+            if ( SL == 0)
+            {
+                label2.Text = " Vui lòng Liên hệ";
+                button1.Visible = false;
+                
+            }
+            else
+            {
+                label2.Visible = false;
+                button1.Visible = true;
+            }    
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -78,5 +90,7 @@ namespace BanHangDienTU
             this.Close();
 
         }
+
+       
     }
 }

@@ -20,7 +20,7 @@ namespace BanHangDienTU
         SqlConnection sqlConn;
         String conString = "";
         DataClasses1DataContext db = new DataClasses1DataContext();
-        DataTable dt;
+       
         public void themDN(DangNhap DN)
         {
             db.DangNhaps.InsertOnSubmit(DN);
@@ -188,6 +188,18 @@ namespace BanHangDienTU
             g.DataSource = db.TimKiemSanPham(TenSP);
 
 
+        }
+        public int LaySLSP ( int MaSP)
+        {
+            int a = db.LaySoLuongSP(MaSP);
+            return a;
+        }
+        public void XoaSPGH ( string tensp )
+        {
+
+            DSGH e = db.DSGHs.FirstOrDefault(p => p.TenSP.Equals(tensp));
+            db.DSGHs.DeleteOnSubmit(e);
+            db.SubmitChanges();
         }
         
        

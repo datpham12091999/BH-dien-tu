@@ -33,8 +33,9 @@ namespace BanHangDienTU
             textBox2.Text = DNW.ChuanHoa(a);
 
             Class1 Kiemtra = new Class1();
+            DangNhapWeb KT1 = new DangNhapWeb();
             bool KT = Kiemtra.KiemTraDangKi(textBox1.Text, textBox2.Text);
-            int KQ = Kiemtra.KiemTraTK(textBox1.Text);
+            int KQ = KT1.KiemTraTK(textBox1.Text);
             if ( textBox1.Text != "" && textBox2.Text != ""  && KT == true && SDT.Text != "" && Email.Text != "" && DiaChi.Text != "" && HoTen.Text != "" && KQ == 0 && SDT.Text.Length == 10)
             {
                 DangKy Dk = new DangKy();
@@ -72,8 +73,9 @@ namespace BanHangDienTU
 
         private void SDT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar) )
                 e.Handled = true;
+           
 
         }
     }

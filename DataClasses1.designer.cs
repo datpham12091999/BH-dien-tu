@@ -267,6 +267,13 @@ namespace BanHangDienTU
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenSP);
 			return ((ISingleResult<TimKiemSanPhamResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LaySoLuongSP")]
+		public int LaySoLuongSP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> masp)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), masp);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DSGH")]

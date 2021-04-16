@@ -189,7 +189,18 @@ namespace BanHangDienTU
 
         private void đặtLịchSửaChữaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            DatLichSuaChua f = new DatLichSuaChua();
+            f.ShowDialog();
+            this.Close();
+        }
 
+        private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 f = new Form1();
+            f.ShowDialog();
+            this.Close();
         }
     }
 

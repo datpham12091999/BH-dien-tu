@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace BanHangDienTU
 {
-    class Class1
+   public  class Class1
     {
-        DAO da;
-        public Class1()
-        {
-            da = new DAO();
-            
-        }
+       
         public bool KiemTraDangKi(string dangnhap, string matkhau)
         {
             int a = dangnhap.Length;
@@ -41,13 +36,6 @@ namespace BanHangDienTU
                
             }
             return false;
-
-        }
-        public int KiemTraTK (string TenTk )
-        {
-            int a = da.TimTKTRUNG(TenTk);
-            return a;
-
 
         }
     }

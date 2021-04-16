@@ -21,7 +21,7 @@ namespace BanHangDienTU
         ClassGioHang C = new ClassGioHang();
         string soluong;
         int N;
-        string thanhtien;
+       
 
 
 
@@ -35,10 +35,14 @@ namespace BanHangDienTU
             {
                 dataGridView1.Visible = false;
                 Thongbao.Visible = true;
-                Thongbao.Text = " Gio Hang Trong";
+                Thongbao.Text = " Giỏ Hàng Trống mời Khách Hàng quay lại để chọn sản phẩm";
                 Btthanhtoan.Visible = false;
                 btcapnhat.Visible = false;
+                button1.Visible = false;
+              
                 
+
+
             }
            for ( int i = 0; i < dataGridView1.Rows.Count; i++)
             {
@@ -60,7 +64,6 @@ namespace BanHangDienTU
         {
             this.Hide();
             Menu MN = new Menu();
-           
             MN.ShowDialog();
             this.Close();
             
@@ -83,15 +86,39 @@ namespace BanHangDienTU
 
         private void button1_Click(object sender, EventArgs e)
         {
-            C.ChinhSuaSL(tensp, N);
-            Cart_Load(sender, e);
+            if ( N >= 100 )
+            {
+                C.ChinhSuaSL(tensp, 1);
+                Cart_Load(sender, e);
+            }
+            else
+            {
+                C.ChinhSuaSL(tensp, N);
+                Cart_Load(sender, e);
+            }
+            
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            tensp = dataGridView1.Rows[e.RowIndex].Cells["TenSP"].Value.ToString();
-            soluong = dataGridView1.Rows[e.RowIndex].Cells["Số_Lượng"].Value.ToString();
-            N = int.Parse(soluong);
+            if (int.Parse(dataGridView1.Rows[e.RowIndex].Cells["Số_Lượng"].Value.ToString()) == 0)
+            {
+                MessageBox.Show("Vui long khong duoc nhap so luong bang 0");
+                Btthanhtoan.Enabled = false;
+                btcapnhat.Enabled = false;
+
+            }
+            else
+            {
+                tensp = dataGridView1.Rows[e.RowIndex].Cells["TenSP"].Value.ToString();
+                soluong = dataGridView1.Rows[e.RowIndex].Cells["Số_Lượng"].Value.ToString();
+                N = int.Parse(soluong);
+                Btthanhtoan.Enabled = true;
+                btcapnhat.Enabled = true;
+
+
+            }
+          
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -99,6 +126,38 @@ namespace BanHangDienTU
             ThanhToan TT = new ThanhToan();
             TT.ShowDialog();
             this.Close();
+        }
+
+        private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void Cart_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                tensp = dataGridView1.Rows[e.RowIndex].Cells["TenSP"].Value.ToString();
+                soluong = dataGridView1.Rows[e.RowIndex].Cells["Số_Lượng"].Value.ToString();
+                N = int.Parse(soluong);
+
+
+
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            C.XoaSP(tensp);
+            C.LaySP(dataGridView1);
+            Cart_Load(sender, e);
         }
     }
 }

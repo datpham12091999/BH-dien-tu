@@ -36,6 +36,7 @@
             this.Btthanhtoan = new System.Windows.Forms.Button();
             this.TT = new System.Windows.Forms.Label();
             this.Thongbao = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,10 +60,12 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(903, 343);
+            this.dataGridView1.Size = new System.Drawing.Size(1269, 343);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
+            this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             // 
             // ComeBack
             // 
@@ -78,7 +81,7 @@
             // btcapnhat
             // 
             this.btcapnhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btcapnhat.Location = new System.Drawing.Point(556, 492);
+            this.btcapnhat.Location = new System.Drawing.Point(743, 483);
             this.btcapnhat.Name = "btcapnhat";
             this.btcapnhat.Size = new System.Drawing.Size(134, 38);
             this.btcapnhat.TabIndex = 4;
@@ -99,7 +102,7 @@
             // Btthanhtoan
             // 
             this.Btthanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btthanhtoan.Location = new System.Drawing.Point(723, 492);
+            this.Btthanhtoan.Location = new System.Drawing.Point(936, 483);
             this.Btthanhtoan.Name = "Btthanhtoan";
             this.Btthanhtoan.Size = new System.Drawing.Size(149, 38);
             this.Btthanhtoan.TabIndex = 4;
@@ -126,11 +129,23 @@
             this.Thongbao.TabIndex = 8;
             this.Thongbao.Text = "label3";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1145, 483);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(149, 38);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Xóa";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Cart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1104, 546);
+            this.ClientSize = new System.Drawing.Size(1319, 569);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Thongbao);
             this.Controls.Add(this.TT);
             this.Controls.Add(this.label2);
@@ -139,9 +154,11 @@
             this.Controls.Add(this.ComeBack);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
+            this.KeyPreview = true;
             this.Name = "Cart";
             this.Text = "Cart";
             this.Load += new System.EventHandler(this.Cart_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cart_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -158,5 +175,6 @@
         private System.Windows.Forms.Button Btthanhtoan;
         private System.Windows.Forms.Label TT;
         private System.Windows.Forms.Label Thongbao;
+        private System.Windows.Forms.Button button1;
     }
 }
