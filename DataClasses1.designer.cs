@@ -224,6 +224,19 @@ namespace BanHangDienTU
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimTaiKhoan")]
+		public int TimTaiKhoan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tentk)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tentk);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayMaDH", IsComposable=true)]
+		public string LayMaDH([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDH", DbType="NVarChar(50)")] string maDH)
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDH).ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayNgayDatHang", IsComposable=true)]
 		public System.Nullable<System.DateTime> LayNgayDatHang([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDH", DbType="NVarChar(8)")] string maDH)
 		{
@@ -236,29 +249,16 @@ namespace BanHangDienTU
 			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma).ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimSPtrung", IsComposable=true)]
-		public System.Nullable<int> TimSPtrung([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tensp)
-		{
-			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tensp).ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimTenSP", IsComposable=true)]
 		public string TimTenSP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> ma)
 		{
 			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma).ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayMaDH", IsComposable=true)]
-		public string LayMaDH([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDH", DbType="NVarChar(50)")] string maDH)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimSPtrung", IsComposable=true)]
+		public System.Nullable<int> TimSPtrung([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tensp)
 		{
-			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDH).ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimTaiKhoan")]
-		public int TimTaiKhoan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tentk)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tentk);
-			return ((int)(result.ReturnValue));
+			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tensp).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimKiemSanPham")]

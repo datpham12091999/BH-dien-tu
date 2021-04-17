@@ -16,15 +16,8 @@ namespace BanHangDienTU
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-            Application.Run(new Menu());
-=======
-<<<<<<< Updated upstream
-            Application.Run(new DatLichSuaChua());
-=======
-            Application.Run(new ThanhToan());
->>>>>>> Stashed changes
->>>>>>> main
+            Application.Run(new DangKi());
+
         }
     }
 }

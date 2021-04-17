@@ -10,7 +10,7 @@ using System.Security.Permissions;
 using System.Windows.Forms;
 namespace BanHangDienTU
 {
-    class DAO
+     public class DAO
     {
         public DAO()
         {
@@ -20,7 +20,7 @@ namespace BanHangDienTU
         SqlConnection sqlConn;
         String conString = "";
         DataClasses1DataContext db = new DataClasses1DataContext();
-        DataTable dt;
+       
         public void themDN(DangNhap DN)
         {
             db.DangNhaps.InsertOnSubmit(DN);
@@ -189,8 +189,8 @@ namespace BanHangDienTU
 
 
         }
-        
-       
+
+
 
     }
 }

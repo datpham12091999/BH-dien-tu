@@ -21,8 +21,7 @@ namespace BanHangDienTU
         ClassGioHang C = new ClassGioHang();
         string soluong;
         int N;
-        string thanhtien;
-
+        
 
 
 

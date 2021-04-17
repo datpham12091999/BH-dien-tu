@@ -128,6 +128,14 @@
     <Parameter Name="tenSP" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.TimTaiKhoan" Method="TimTaiKhoan">
+    <Parameter Name="tentk" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.LayMaDH" Method="LayMaDH" IsComposable="true">
+    <Parameter Name="MaDH" Parameter="maDH" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
+  </Function>
   <Function Name="dbo.LayNgayDatHang" Method="LayNgayDatHang" IsComposable="true">
     <Parameter Name="MaDH" Parameter="maDH" Type="System.String" DbType="NVarChar(8)" />
     <Return Type="System.DateTime" />
@@ -136,20 +144,12 @@
     <Parameter Name="ma" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.TimSPtrung" Method="TimSPtrung" IsComposable="true">
-    <Parameter Name="tensp" Type="System.String" DbType="NVarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.TimTenSP" Method="TimTenSP" IsComposable="true">
     <Parameter Name="ma" Type="System.Int32" DbType="Int" />
     <Return Type="System.String" />
   </Function>
-  <Function Name="dbo.LayMaDH" Method="LayMaDH" IsComposable="true">
-    <Parameter Name="MaDH" Parameter="maDH" Type="System.String" DbType="NVarChar(50)" />
-    <Return Type="System.String" />
-  </Function>
-  <Function Name="dbo.TimTaiKhoan" Method="TimTaiKhoan">
-    <Parameter Name="tentk" Type="System.String" DbType="NVarChar(50)" />
+  <Function Name="dbo.TimSPtrung" Method="TimSPtrung" IsComposable="true">
+    <Parameter Name="tensp" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.TimKiemSanPham" Method="TimKiemSanPham">
