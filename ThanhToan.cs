@@ -23,6 +23,9 @@ namespace BanHangDienTU
         {
             int ThanhTienSP = 0;
             c.LaySP(dataGridView1);
+            dataGridView1.Columns[0].Width = (int)(dataGridView1.Width * 0.5);
+            dataGridView1.Columns[1].Width = (int)(dataGridView1.Width * 0.25);
+            dataGridView1.Columns[2].Width = (int)(dataGridView1.Width * 0.25);
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 int n = int.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString());
@@ -40,7 +43,7 @@ namespace BanHangDienTU
 
         private void BtThanhToan_Click(object sender, EventArgs e)
         {
-            if (txtHoTen.Text == "" || TXTdiachi.Text == "" || TXTEmail.Text ==""|| TXTSDT.Text=="")
+            if (txtHoTen.Text == "" || TXTdiachi.Text == "" || TXTEmail.Text ==""|| TXTSDT.Text=="" ||cbQuanHuyen.Text =="" || cbTinhThanh.Text =="")
             {
                 MessageBox.Show("Xin vui long dien tat ca thong tin ");
             }
@@ -60,7 +63,7 @@ namespace BanHangDienTU
                     DangKy DK = new DangKy();
                     DK.ThemKH(txtHoTen.Text, TXTdiachi.Text, TXTEmail.Text, TXTSDT.Text);
                     int MaKh = TT.LayMaKH(txtHoTen.Text, TXTSDT.Text);
-                    TT.ThemDH(MaKh, MaDH, int.Parse(lbThanhTien.Text), dataGridView1);
+                    TT.ThemDH(MaKh, MaDH, int.Parse(lbThanhTien.Text), dataGridView1,TXTdiachi.Text , cbTinhThanh.Text , cbQuanHuyen.Text);
                     MessageBox.Show("Thanh Toan Thanh Cong" + "Mã Đơn Hàng Của Bạn Là :" + MaDH);
                     Menu MN = new Menu();
                     MN.ShowDialog();
@@ -80,7 +83,7 @@ namespace BanHangDienTU
                     int MaRadom = rd.Next(1000000, 9999999);
                     String MaDH = random + MaRadom;
                     int MaKh = TT.LayMaKH(txtHoTen.Text, TXTSDT.Text);
-                    TT.ThemDH(MaKh, MaDH, int.Parse(lbThanhTien.Text), dataGridView1);
+                    TT.ThemDH(MaKh, MaDH, int.Parse(lbThanhTien.Text), dataGridView1, TXTdiachi.Text, cbTinhThanh.Text, cbQuanHuyen.Text);
                     MessageBox.Show("Thanh Toan Thanh Cong" + "Mã Đơn Hàng Của Bạn Là :" + MaDH);
                     Menu MN = new Menu();
                     MN.ShowDialog();
@@ -115,6 +118,18 @@ namespace BanHangDienTU
             Cart c = new Cart();
             c.ShowDialog();
             this.Close();
+        }
+
+        private void cbTinhThanh_DropDown(object sender, EventArgs e)
+        {
+           
+            TT.LayTinh(cbTinhThanh);
+        }
+
+        private void cbQuanHuyen_DropDown(object sender, EventArgs e)
+        {
+           
+            TT.layQuanHuyen(cbQuanHuyen,cbTinhThanh.Text );
         }
     }
 }

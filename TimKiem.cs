@@ -22,6 +22,9 @@ namespace BanHangDienTU
         {
             ClassTimKiem TK1 = new ClassTimKiem();
             TK1.TimKiemSanPham(dataGridView1, TK);
+            dataGridView1.Columns[0].Width = (int)(dataGridView1.Width * 0.5);
+            dataGridView1.Columns[1].Width = (int)(dataGridView1.Width * 0.5);
+     
             dataGridView1.ReadOnly = true;
             label2.Visible = false;
             if ( dataGridView1.Rows[0].Cells[0].Value == null)

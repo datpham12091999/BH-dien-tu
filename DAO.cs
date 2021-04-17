@@ -201,8 +201,31 @@ namespace BanHangDienTU
             db.DSGHs.DeleteOnSubmit(e);
             db.SubmitChanges();
         }
-        
-       
+        public void LayTinh(ComboBox cb)
+        {
+            
 
+            var p = db.Tinhs.Select(s =>
+                    new { Name = s.TenTinh,
+                    }
+                    ).ToList();
+
+            cb.DataSource = p;
+            cb.DisplayMember = "Name";
+        }
+        public int LayMaTinh ( string tentinh)
+        {
+            int a = db.LayMaTinh(tentinh);
+            return a;
+            
+        }
+        public void LayQuanHuyen(ComboBox cb , int matinh)
+        {
+
+            var p = db.QuanHuyens.Where(s => s.MaTinh.Equals(matinh)).Select(x => new { 
+            Name = x.TenQuanHuyen}).ToList();
+            cb.DataSource = p;
+            cb.DisplayMember = "Name";
+        }
     }
 }

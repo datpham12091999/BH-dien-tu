@@ -62,6 +62,15 @@ namespace BanHangDienTU
 
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DangKi DangKy = new DangKi();
+            this.Close();
+            DangKy.ShowDialog();
+            
+        }
     }
 }
 
