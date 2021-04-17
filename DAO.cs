@@ -7,7 +7,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Security.Permissions;
-
+using System.Windows.Forms;
 namespace BanHangDienTU
 {
     class DAO
@@ -20,7 +20,7 @@ namespace BanHangDienTU
         SqlConnection sqlConn;
         String conString = "";
         DataClasses1DataContext db = new DataClasses1DataContext();
-        DataTable dt;
+       
         public void themDN(DangNhap DN)
         {
             db.DangNhaps.InsertOnSubmit(DN);
@@ -176,6 +176,29 @@ namespace BanHangDienTU
         public void ThemLichSuaChua (SuaChua SC )
         {
             db.SuaChuas.InsertOnSubmit(SC);
+            db.SubmitChanges();
+        }
+        public  int TimTKTRUNG (string TenTK)
+        {
+            int kq = db.TimTaiKhoan(TenTK);
+            return kq;
+        }
+        public void TimKiemSP (DataGridView g , string TenSP)
+        {
+            g.DataSource = db.TimKiemSanPham(TenSP);
+
+
+        }
+        public int LaySLSP ( int MaSP)
+        {
+            int a = db.LaySoLuongSP(MaSP);
+            return a;
+        }
+        public void XoaSPGH ( string tensp )
+        {
+
+            DSGH e = db.DSGHs.FirstOrDefault(p => p.TenSP.Equals(tensp));
+            db.DSGHs.DeleteOnSubmit(e);
             db.SubmitChanges();
         }
         

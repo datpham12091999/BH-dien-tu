@@ -24,6 +24,13 @@ namespace BanHangDienTU
             string x = chuanhoa.Trim();
             return x;
         }
+        public int KiemTraTK(string TenTk)
+        {
+            int a = da.TimTKTRUNG(TenTk);
+            return a;
+
+
+        }
     }
    
 }

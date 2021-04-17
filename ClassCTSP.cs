@@ -33,5 +33,10 @@ namespace BanHangDienTU
             da.ThemSLsanpham(tensp);
            
         }
+        public int LaySoLuongSP(int MaSP)
+        {
+            int SL = da.LaySLSP(MaSP);
+            return SL;
+        }
     }
 }

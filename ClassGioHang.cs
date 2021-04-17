@@ -21,5 +21,10 @@ namespace BanHangDienTU
         {
             da.ChinhSuaSL(tensp, SL);
         }
+        public void XoaSP ( string tensp)
+        {
+            da.XoaSPGH(tensp);
+        }
+      
     }
 }

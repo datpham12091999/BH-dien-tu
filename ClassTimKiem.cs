@@ -51,6 +51,11 @@ namespace BanHangDienTU
         {
             g.DataSource = da.LayCTDH(MaDH);
         }
+        public void TimKiemSanPham ( DataGridView g , string TenSP)
+        {
+            da.TimKiemSP(g,TenSP); ;
+
+        }
            
          
     }

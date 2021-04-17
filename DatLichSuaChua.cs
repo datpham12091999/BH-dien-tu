@@ -52,5 +52,12 @@ namespace BanHangDienTU
             }
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Menu f = new Menu();
+            f.ShowDialog();
+            this.Close();
+        }
     }
 }

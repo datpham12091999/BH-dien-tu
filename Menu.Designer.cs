@@ -426,7 +426,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 24);
             this.button1.TabIndex = 8;
-            this.button1.Text = "tim kiem";
+            this.button1.Text = "Tìm Kiếm";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -448,6 +448,7 @@
             this.đăngNhậpToolStripMenuItem.Name = "đăngNhậpToolStripMenuItem";
             this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
             this.đăngNhậpToolStripMenuItem.Text = "Đăng Nhập";
+            this.đăngNhậpToolStripMenuItem.Click += new System.EventHandler(this.đăngNhậpToolStripMenuItem_Click);
             // 
             // traCứuĐHToolStripMenuItem
             // 
