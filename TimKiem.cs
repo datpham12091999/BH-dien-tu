@@ -64,7 +64,20 @@ namespace BanHangDienTU
                 label2.Text = " Không có sản phẩm mà bạn tìm kiếm mời bạn tìm lại ";
                 label2.Visible = true;
             }
+            else
+            {
+                dataGridView1.Visible = true;
+                label2.Visible = false;
+            }
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu MN = new Menu();
+            MN.ShowDialog();
+            this.Close();
         }
     }
   

@@ -189,6 +189,18 @@ namespace BanHangDienTU
 
 
         }
+        public int LaySLSP ( int MaSP)
+        {
+            int a = db.LaySoLuongSP(MaSP);
+            return a;
+        }
+        public void XoaSPGH ( string tensp )
+        {
+
+            DSGH e = db.DSGHs.FirstOrDefault(p => p.TenSP.Equals(tensp));
+            db.DSGHs.DeleteOnSubmit(e);
+            db.SubmitChanges();
+        }
 
 
 
