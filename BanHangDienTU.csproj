@@ -64,7 +64,14 @@
     </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="ClassCTSP.cs" />
+    <Compile Include="ClassDSKhHoTro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassDSKhHoTro.Designer.cs">
+      <DependentUpon>ClassDSKhHoTro.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClassGioHang.cs" />
+    <Compile Include="ClassHoTroKH.cs" />
     <Compile Include="ClassMenu.cs" />
     <Compile Include="ClassSuaChua.cs" />
     <Compile Include="ClassThanhToan.cs" />
@@ -101,6 +108,12 @@
     <Compile Include="DatLichSuaChua.Designer.cs">
       <DependentUpon>DatLichSuaChua.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCTDH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +149,9 @@
     <EmbeddedResource Include="Cart.resx">
       <DependentUpon>Cart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClassDSKhHoTro.resx">
+      <DependentUpon>ClassDSKhHoTro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CTSP.resx">
       <DependentUpon>CTSP.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DatLichSuaChua.resx">
       <DependentUpon>DatLichSuaChua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCTDH.resx">
       <DependentUpon>FormCTDH.cs</DependentUpon>

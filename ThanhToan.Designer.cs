@@ -92,6 +92,7 @@
             this.TXTSDT.Name = "TXTSDT";
             this.TXTSDT.Size = new System.Drawing.Size(234, 30);
             this.TXTSDT.TabIndex = 0;
+          
             this.TXTSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXTSDT_KeyPress);
             // 
             // TXTdiachi

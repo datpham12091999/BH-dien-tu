@@ -130,10 +130,11 @@
             // txtSDT
             // 
             this.txtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.Location = new System.Drawing.Point(307, 377);
+            this.txtSDT.Location = new System.Drawing.Point(307, 368);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(394, 34);
             this.txtSDT.TabIndex = 2;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // dtNgayGio
             // 

@@ -86,7 +86,7 @@ namespace BanHangDienTU
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if ( N >= 100 )
+            if ( N >= 1000 )
             {
                 C.ChinhSuaSL(tensp, 1);
                 Cart_Load(sender, e);

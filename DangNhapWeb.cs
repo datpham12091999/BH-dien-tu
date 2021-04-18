@@ -31,6 +31,12 @@ namespace BanHangDienTU
 
 
         }
+        public int DangNhapNV(string dn, string mk)
+        {
+            int kq = da.DangNhapNV(dn, mk);
+            return kq;
+
+        }
     }
    
 }

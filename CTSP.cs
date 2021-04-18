@@ -91,6 +91,13 @@ namespace BanHangDienTU
 
         }
 
-       
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Cart f = new Cart();
+            f.ShowDialog();
+
+            this.Close();
+        }
     }
 }

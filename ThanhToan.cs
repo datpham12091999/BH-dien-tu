@@ -47,6 +47,10 @@ namespace BanHangDienTU
             {
                 MessageBox.Show("Xin vui long dien tat ca thong tin ");
             }
+            if (TXTSDT.Text.Length != 10)
+            {
+                MessageBox.Show("SĐT phải 1 số");
+            }
             else
             {
                 int a = TT.TimKH(txtHoTen.Text, TXTSDT.Text);
@@ -60,14 +64,25 @@ namespace BanHangDienTU
                     Random rd = new Random();
                     int MaRadom = rd.Next(1000000, 9999999);
                     String MaDH = random + MaRadom;
+                    int kq = TT.TimMaDH(MaDH);
+                    while ( kq == 1)
+                    {
+                         c = ra.Next(0, KiTu.Length);
+                         random = KiTu.ElementAt(c).ToString();
+                         MaRadom = rd.Next(1000000, 9999999);
+                         MaDH = random + MaRadom;
+                         kq = TT.TimMaDH(MaDH);
+
+                    }
                     DangKy DK = new DangKy();
                     DK.ThemKH(txtHoTen.Text, TXTdiachi.Text, TXTEmail.Text, TXTSDT.Text);
                     int MaKh = TT.LayMaKH(txtHoTen.Text, TXTSDT.Text);
-                    TT.ThemDH(MaKh, MaDH, int.Parse(lbThanhTien.Text), dataGridView1,TXTdiachi.Text , cbTinhThanh.Text , cbQuanHuyen.Text);
-                    MessageBox.Show("Thanh Toan Thanh Cong" + "Mã Đơn Hàng Của Bạn Là :" + MaDH);
+                    TT.ThemDH(MaKh, MaDH, int.Parse(lbThanhTien.Text), dataGridView1, TXTdiachi.Text, cbTinhThanh.Text, cbQuanHuyen.Text);
+                    MessageBox.Show("Thanh Toan Thanh Cong" + "Mã Đơn Hàng Của Bạn Là : " + MaDH);
                     Menu MN = new Menu();
                     MN.ShowDialog();
                     this.Close();
+
 
 
                 }
@@ -78,13 +93,23 @@ namespace BanHangDienTU
                     string random;
                     int c = ra.Next(0, KiTu.Length); //string.Lenght gets the size of string
                     random = KiTu.ElementAt(c).ToString();
-
+                    
                     Random rd = new Random();
                     int MaRadom = rd.Next(1000000, 9999999);
                     String MaDH = random + MaRadom;
+                    int kq = TT.TimMaDH(MaDH);
+                    while (kq == 1)
+                    {
+                        c = ra.Next(0, KiTu.Length);
+                        random = KiTu.ElementAt(c).ToString();
+                        MaRadom = rd.Next(1000000, 9999999);
+                        MaDH = random + MaRadom;
+                        kq = TT.TimMaDH(MaDH);
+
+                    }
                     int MaKh = TT.LayMaKH(txtHoTen.Text, TXTSDT.Text);
                     TT.ThemDH(MaKh, MaDH, int.Parse(lbThanhTien.Text), dataGridView1, TXTdiachi.Text, cbTinhThanh.Text, cbQuanHuyen.Text);
-                    MessageBox.Show("Thanh Toan Thanh Cong" + "Mã Đơn Hàng Của Bạn Là :" + MaDH);
+                    MessageBox.Show("Thanh Toán Thành Công" + "Mã Đơn Hàng Của Bạn Là : " + MaDH);
                     Menu MN = new Menu();
                     MN.ShowDialog();
                     this.Close();
@@ -131,5 +156,7 @@ namespace BanHangDienTU
            
             TT.layQuanHuyen(cbQuanHuyen,cbTinhThanh.Text );
         }
+
+       
     }
 }

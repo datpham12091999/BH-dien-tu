@@ -63,6 +63,9 @@ namespace BanHangDienTU
     partial void InsertDonHang(DonHang instance);
     partial void UpdateDonHang(DonHang instance);
     partial void DeleteDonHang(DonHang instance);
+    partial void InsertHoTroKhachHang(HoTroKhachHang instance);
+    partial void UpdateHoTroKhachHang(HoTroKhachHang instance);
+    partial void DeleteHoTroKhachHang(HoTroKhachHang instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -180,6 +183,14 @@ namespace BanHangDienTU
 			get
 			{
 				return this.GetTable<DonHang>();
+			}
+		}
+		
+		public System.Data.Linq.Table<HoTroKhachHang> HoTroKhachHangs
+		{
+			get
+			{
+				return this.GetTable<HoTroKhachHang>();
 			}
 		}
 		
@@ -301,6 +312,38 @@ namespace BanHangDienTU
 		public int LayMaTinh([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tinh)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tinh);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TimMaDHTrung")]
+		public int TimMaDHTrung([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDonHang", DbType="NVarChar(8)")] string maDonHang)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDonHang);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayQuanHuyen", IsComposable=true)]
+		public string LayQuanHuyen([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDH", DbType="NVarChar(50)")] string maDH)
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDH).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayTinh", IsComposable=true)]
+		public string LayTinh([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDH", DbType="NVarChar(50)")] string maDH)
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDH).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayDiaChi", IsComposable=true)]
+		public string LayDiaChi([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDH", DbType="NVarChar(50)")] string maDH)
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDH).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.KTDangNhapNV")]
+		public int KTDangNhapNV([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string tendangnhap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string matkhau)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tendangnhap, matkhau);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -2382,6 +2425,212 @@ namespace BanHangDienTU
 		{
 			this.SendPropertyChanging();
 			entity.DonHang = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HoTroKhachHang")]
+	public partial class HoTroKhachHang : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaPhieuHoTro;
+		
+		private string _HoTenKH;
+		
+		private string _SĐT;
+		
+		private System.DateTime _NgayGio;
+		
+		private string _DichVu;
+		
+		private string _LoiNhan;
+		
+		private string _TinhTrang;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaPhieuHoTroChanging(int value);
+    partial void OnMaPhieuHoTroChanged();
+    partial void OnHoTenKHChanging(string value);
+    partial void OnHoTenKHChanged();
+    partial void OnSĐTChanging(string value);
+    partial void OnSĐTChanged();
+    partial void OnNgayGioChanging(System.DateTime value);
+    partial void OnNgayGioChanged();
+    partial void OnDichVuChanging(string value);
+    partial void OnDichVuChanged();
+    partial void OnLoiNhanChanging(string value);
+    partial void OnLoiNhanChanged();
+    partial void OnTinhTrangChanging(string value);
+    partial void OnTinhTrangChanged();
+    #endregion
+		
+		public HoTroKhachHang()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaPhieuHoTro", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaPhieuHoTro
+		{
+			get
+			{
+				return this._MaPhieuHoTro;
+			}
+			set
+			{
+				if ((this._MaPhieuHoTro != value))
+				{
+					this.OnMaPhieuHoTroChanging(value);
+					this.SendPropertyChanging();
+					this._MaPhieuHoTro = value;
+					this.SendPropertyChanged("MaPhieuHoTro");
+					this.OnMaPhieuHoTroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTenKH", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string HoTenKH
+		{
+			get
+			{
+				return this._HoTenKH;
+			}
+			set
+			{
+				if ((this._HoTenKH != value))
+				{
+					this.OnHoTenKHChanging(value);
+					this.SendPropertyChanging();
+					this._HoTenKH = value;
+					this.SendPropertyChanged("HoTenKH");
+					this.OnHoTenKHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SĐT", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string SĐT
+		{
+			get
+			{
+				return this._SĐT;
+			}
+			set
+			{
+				if ((this._SĐT != value))
+				{
+					this.OnSĐTChanging(value);
+					this.SendPropertyChanging();
+					this._SĐT = value;
+					this.SendPropertyChanged("SĐT");
+					this.OnSĐTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayGio", DbType="DateTime NOT NULL")]
+		public System.DateTime NgayGio
+		{
+			get
+			{
+				return this._NgayGio;
+			}
+			set
+			{
+				if ((this._NgayGio != value))
+				{
+					this.OnNgayGioChanging(value);
+					this.SendPropertyChanging();
+					this._NgayGio = value;
+					this.SendPropertyChanged("NgayGio");
+					this.OnNgayGioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DichVu", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string DichVu
+		{
+			get
+			{
+				return this._DichVu;
+			}
+			set
+			{
+				if ((this._DichVu != value))
+				{
+					this.OnDichVuChanging(value);
+					this.SendPropertyChanging();
+					this._DichVu = value;
+					this.SendPropertyChanged("DichVu");
+					this.OnDichVuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoiNhan", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string LoiNhan
+		{
+			get
+			{
+				return this._LoiNhan;
+			}
+			set
+			{
+				if ((this._LoiNhan != value))
+				{
+					this.OnLoiNhanChanging(value);
+					this.SendPropertyChanging();
+					this._LoiNhan = value;
+					this.SendPropertyChanged("LoiNhan");
+					this.OnLoiNhanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TinhTrang", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string TinhTrang
+		{
+			get
+			{
+				return this._TinhTrang;
+			}
+			set
+			{
+				if ((this._TinhTrang != value))
+				{
+					this.OnTinhTrangChanging(value);
+					this.SendPropertyChanging();
+					this._TinhTrang = value;
+					this.SendPropertyChanged("TinhTrang");
+					this.OnTinhTrangChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	

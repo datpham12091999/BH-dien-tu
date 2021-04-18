@@ -56,7 +56,24 @@ namespace BanHangDienTU
             da.TimKiemSP(g,TenSP); ;
 
         }
-           
-         
+        public string LayDiaChi(string MaDH)
+        {
+            string s = da.LayDiaChi(MaDH);
+            return s;
+
+        }
+        public string LayTinhThanh(string MaDH)
+        {
+            string s = da.LayTinhThanh(MaDH);
+            return s;
+
+        }
+        public string LayQuanHuyen(string MaDH)
+        {
+            string s = da.LayQuanHuyen(MaDH);
+            return s;
+
+        }
+
     }
 }

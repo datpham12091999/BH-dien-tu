@@ -26,5 +26,14 @@ namespace BanHangDienTU
             dataGridView1.Columns[1].Width = (int)(dataGridView1.Width * 0.25);
             dataGridView1.Columns[2].Width = (int)(dataGridView1.Width * 0.25);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu MN = new Menu();
+            MN.ShowDialog();
+            this.Close();
+
+        }
     }
 }

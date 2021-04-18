@@ -44,6 +44,10 @@ namespace BanHangDienTU
             {
                 MessageBox.Show(" vui long nhap SDT");
             }
+            else if  (txtSDT.Text.Length != 10)
+            {
+                    MessageBox.Show("SĐT phải 10 số");
+            }
             else
             {
                 SC.ThemLichSua(txtTenSp.Text, txtSDT.Text, txtDiaChi.Text, TxtMoTa.Text, dtNgayGio.Value);
@@ -58,6 +62,12 @@ namespace BanHangDienTU
             Menu f = new Menu();
             f.ShowDialog();
             this.Close();
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

@@ -168,6 +168,7 @@ namespace BanHangDienTU
                 p.SanPham.TenSP,
                 p.SoLuong,
                 p.Gia
+                
 
             }) ;
             return CTPM;
@@ -227,5 +228,65 @@ namespace BanHangDienTU
             cb.DataSource = p;
             cb.DisplayMember = "Name";
         }
+        public int TimMaDHtrung ( string MaDH)
+        {
+          int kq =  db.TimMaDHTrung(MaDH);
+            return kq;
+        }
+        public void THEMYCHOTRo( HoTroKhachHang HT)
+        {
+            db.HoTroKhachHangs.InsertOnSubmit(HT);
+            db.SubmitChanges();
+        }
+        public string LayDiaChi(string MaDH)
+        {
+            string s = db.LayDiaChi(MaDH);
+            return s;
+
+        }
+        public string LayTinhThanh(string MaDH)
+        {
+            string s = db.LayTinh(MaDH);
+            return s;
+
+        }
+        public string LayQuanHuyen(string MaDH)
+        {
+            string s = db.LayQuanHuyen(MaDH);
+            return s;
+
+        }
+        public int DangNhapNV(string dn, string mk)
+        {
+            int kq = db.KTDangNhapNV(dn, mk);
+            return kq;
+
+        }
+        public dynamic LayDSKHHT ()
+        {
+            var DSHT = db.HoTroKhachHangs.Where(s => s.TinhTrang.Equals("Chưa Xử Lý")).Select(p => new
+            {
+                p.MaPhieuHoTro,
+                p.HoTenKH,
+                p.NgayGio,
+                p.SĐT,
+                p.DichVu,
+                p.LoiNhan,
+                p.TinhTrang,
+              
+
+
+            });
+            
+            return DSHT;
+        }
+        public void ChinhSuaTinhTrang ( int ma , string TinhTrang)
+        {
+            HoTroKhachHang HT = db.HoTroKhachHangs.FirstOrDefault(s => s.MaPhieuHoTro.Equals(ma));
+            HT.TinhTrang = TinhTrang;
+            db.SubmitChanges();
+            
+        }
+
     }
 }

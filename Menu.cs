@@ -21,6 +21,7 @@ namespace BanHangDienTU
         PictureBox[] PB = new PictureBox[10];
         Label[] TenSP;
         Label[] GiaSP;
+       public  int MaNV = 0;
 
 
 
@@ -35,6 +36,10 @@ namespace BanHangDienTU
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            if (MaNV == 1)
+            {
+                hỗTrợKháchHàngToolStripMenuItem.Visible = true;
+            }
             
             
             int a = MN.DemSoHinh();
@@ -201,6 +206,43 @@ namespace BanHangDienTU
             Form1 f = new Form1();
             f.ShowDialog();
             this.Close();
+        }
+
+        private void đăngKýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DangKi f = new DangKi();
+            f.ShowDialog();
+            
+            this.Close();
+        }
+
+        private void hoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 f = new Form2();
+            f.ShowDialog();
+
+            this.Close();
+        }
+
+        private void GH_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Cart f = new Cart();
+            f.ShowDialog();
+
+            this.Close();
+        }
+
+        private void hỗTrợKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ClassDSKhHoTro f = new  ClassDSKhHoTro();
+            f.ShowDialog();
+
+            this.Close();
+
         }
     }
 

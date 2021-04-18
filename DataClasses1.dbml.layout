@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.375, 10" name="DataClasses1">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.375, 11" name="DataClasses1">
   <DataContextMoniker Name="/DataClasses1DataContext" />
   <nestedChildShapes>
     <classShape Id="ae94b535-d93e-48bb-a90a-e830ef872c6d" absoluteBounds="6.75, 4.75, 2, 1.3862939453125005">
@@ -44,14 +44,14 @@
         <elementListCompartment Id="3162bdce-abd6-4c52-a2b5-1cb0f4b19dc7" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.65625 : 7.0881982421875); (2.65625 : 8.84375); (3.5 : 8.84375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.65625 : 7.0881982421875); (2.65625 : 8.46875); (3.5 : 8.46875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataClasses1DataContext/KhachHang/KhachHang_DangNhap" />
       <nodes>
         <classShapeMoniker Id="fc8a0591-ec8d-436a-a544-6511420a681a" />
         <classShapeMoniker Id="d6449a98-535b-41ca-a602-e351138c2286" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 2.13544840494792); (6.25 : 2.13544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 2.13544840494792); (6.25 : 2.13544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataClasses1DataContext/SanPham/SanPham_CTDH" />
       <nodes>
         <classShapeMoniker Id="66047e9e-9374-4cdb-8a89-e94f617c49a7" />
@@ -83,7 +83,7 @@
         <elementListCompartment Id="df253f1f-9467-4cfd-b537-854c6baca292" absoluteBounds="12.14, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(11.375 : 1.59699625651042); (12.125 : 1.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.375 : 1.59699625651042); (12.125 : 1.59699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/Tinh/Tinh_QuanHuyen" />
       <nodes>
         <classShapeMoniker Id="6c9b8833-9674-4da8-bedd-0c781afa3dd2" />
@@ -103,12 +103,18 @@
         <classShapeMoniker Id="494cad20-ed7c-484d-b14c-82878513b00f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.89024983723958); (3.75 : 5.89024983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 5.46875); (3.75 : 5.46875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataClasses1DataContext/KhachHang/KhachHang_DonHang" />
       <nodes>
         <classShapeMoniker Id="fc8a0591-ec8d-436a-a544-6511420a681a" />
         <classShapeMoniker Id="88f55ded-b77d-4a1b-bb41-333a3783796e" />
       </nodes>
     </associationConnector>
+    <classShape Id="f53babfe-d6eb-40ba-9741-d625dc1ff4f2" absoluteBounds="0.5, 8.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataClasses1DataContext/HoTroKhachHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7b95dad2-a87e-424d-87f3-f733b7718429" absoluteBounds="0.51499999999999968, 9.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

@@ -20,7 +20,7 @@ namespace BanHangDienTU
 
         private void TKDH_Load(object sender, EventArgs e)
         {
-            lb1.Visible = lb2.Visible = lb3.Visible = lbMaDH.Visible = lbNgayDH.Visible = lbThanhTien.Visible = false;
+          lbDC.Visible =LbQuanhuyen.Visible =LbTinhThanh.Visible =  lb1.Visible = lb2.Visible = lb3.Visible = lbMaDH.Visible = lbNgayDH.Visible = lbThanhTien.Visible = false;
             button1.Visible = false;
         }
 
@@ -45,7 +45,10 @@ namespace BanHangDienTU
                     lbMaDH.Text = DH.LayMDH(textBox1.Text);
                     lbNgayDH.Value = DH.LayNgay(textBox1.Text);
                     lbThanhTien.Text = DH.LayTT(textBox1.Text).ToString();
-                    lb1.Visible = lb2.Visible = lb3.Visible = lbMaDH.Visible = lbNgayDH.Visible = lbThanhTien.Visible = true;
+                    lbDC.Text = DH.LayDiaChi(textBox1.Text);
+                    LbTinhThanh.Text = DH.LayTinhThanh(textBox1.Text);
+                    LbQuanhuyen.Text = DH.LayQuanHuyen(textBox1.Text);
+                    lbDC.Visible = LbQuanhuyen.Visible = LbTinhThanh.Visible = lb1.Visible = lb2.Visible = lb3.Visible = lbMaDH.Visible = lbNgayDH.Visible = lbThanhTien.Visible = true;
                     button1.Visible = true;
 
                 }
@@ -60,6 +63,15 @@ namespace BanHangDienTU
             ct.MaDH = textBox1.Text;
             ct.ShowDialog();
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu MN = new Menu();
+            MN.ShowDialog();
+            this.Close();
+
         }
     }
 }

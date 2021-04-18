@@ -108,6 +108,17 @@
       <Association Name="KhachHang_DonHang" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KhachHang" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.HoTroKhachHang" Member="HoTroKhachHangs">
+    <Type Name="HoTroKhachHang">
+      <Column Name="MaPhieuHoTro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HoTenKH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SĐT" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayGio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DichVu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LoiNhan" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Function Name="dbo.DemSoSP" Method="DemSoSP">
     <Return Type="System.Int32" />
   </Function>
@@ -184,6 +195,27 @@
   </Function>
   <Function Name="dbo.LayMaTinh" Method="LayMaTinh">
     <Parameter Name="tinh" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TimMaDHTrung" Method="TimMaDHTrung">
+    <Parameter Name="MaDonHang" Parameter="maDonHang" Type="System.String" DbType="NVarChar(8)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.LayQuanHuyen" Method="LayQuanHuyen" IsComposable="true">
+    <Parameter Name="MaDH" Parameter="maDH" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.LayTinh" Method="LayTinh" IsComposable="true">
+    <Parameter Name="MaDH" Parameter="maDH" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.LayDiaChi" Method="LayDiaChi" IsComposable="true">
+    <Parameter Name="MaDH" Parameter="maDH" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.KTDangNhapNV" Method="KTDangNhapNV">
+    <Parameter Name="tendangnhap" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="matkhau" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

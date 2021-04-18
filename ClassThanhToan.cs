@@ -58,5 +58,10 @@ namespace BanHangDienTU
             int a = da.LayMaTinh(tentinh);
             da.LayQuanHuyen(cb, a);
         }
+        public int TimMaDH(string MaDH)
+        {
+            int kq = da.TimMaDHtrung(MaDH);
+            return kq;
+        }
     }
 }
