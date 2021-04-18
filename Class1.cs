@@ -8,12 +8,12 @@ namespace BanHangDienTU
 {
    public  class Class1
     {
-        DAO da;
-        public Class1()
-        {
-            da = new DAO();
+        
+        //public Class1()
+        //{
+        //    da = new DAO();
             
-        }
+        //}
         public bool KiemTraDangKi(string dangnhap, string matkhau)
         {
             int a = dangnhap.Length;
