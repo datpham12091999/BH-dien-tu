@@ -43,6 +43,7 @@
             this.DiaChi = new System.Windows.Forms.TextBox();
             this.HoTen = new System.Windows.Forms.TextBox();
             this.NgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.ComeBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -169,11 +170,23 @@
             this.NgaySinh.Size = new System.Drawing.Size(495, 22);
             this.NgaySinh.TabIndex = 3;
             // 
+            // ComeBack
+            // 
+            this.ComeBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComeBack.Location = new System.Drawing.Point(25, 12);
+            this.ComeBack.Name = "ComeBack";
+            this.ComeBack.Size = new System.Drawing.Size(147, 53);
+            this.ComeBack.TabIndex = 4;
+            this.ComeBack.Text = "Quay Lại";
+            this.ComeBack.UseVisualStyleBackColor = true;
+            this.ComeBack.Click += new System.EventHandler(this.ComeBack_Click);
+            // 
             // DangKi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 579);
+            this.Controls.Add(this.ComeBack);
             this.Controls.Add(this.NgaySinh);
             this.Controls.Add(this.HoTen);
             this.Controls.Add(this.DiaChi);
@@ -191,6 +204,7 @@
             this.Controls.Add(this.label1);
             this.Name = "DangKi";
             this.Text = "DangKi";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DangKi_FormClosing);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DangKi_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -214,5 +228,6 @@
         private System.Windows.Forms.TextBox DiaChi;
         private System.Windows.Forms.TextBox HoTen;
         private System.Windows.Forms.DateTimePicker NgaySinh;
+        private System.Windows.Forms.Button ComeBack;
     }
 }

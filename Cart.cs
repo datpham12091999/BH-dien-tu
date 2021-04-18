@@ -20,7 +20,7 @@ namespace BanHangDienTU
         string tensp;
         ClassGioHang C = new ClassGioHang();
         string soluong;
-        int N;
+        int N = 0;
        
 
 
@@ -46,6 +46,10 @@ namespace BanHangDienTU
                 
 
 
+            }
+            else
+            {
+                Thongbao.Visible = false;
             }
            for ( int i = 0; i < dataGridView1.Rows.Count; i++)
             {
@@ -86,12 +90,20 @@ namespace BanHangDienTU
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+            if (N == 0)
+            {
+                MessageBox.Show("Vui long chon hang cap nhat ");
+                Btthanhtoan.Enabled =true;
+                btcapnhat.Enabled = true;
+                
+            }
             if ( N >= 1000 )
             {
                 C.ChinhSuaSL(tensp, 1);
                 Cart_Load(sender, e);
             }
-            else
+            else if ( N > 1 && N < 1000)
             {
                 C.ChinhSuaSL(tensp, N);
                 Cart_Load(sender, e);

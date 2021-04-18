@@ -78,5 +78,21 @@ namespace BanHangDienTU
            
 
         }
+
+        private void DangKi_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            Cart c = new Cart();
+            c.ShowDialog();
+            this.Close();
+        }
+
+        private void ComeBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Cart c = new Cart();
+            c.ShowDialog();
+            this.Close();
+        }
     }
 }
