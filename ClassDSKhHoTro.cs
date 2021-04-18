@@ -16,8 +16,8 @@ namespace BanHangDienTU
         {
             InitializeComponent();
         }
-        string TinhTrang;
-        int MaPhieuMuon;
+        string TinhTrang = "";
+        int MaPhieuMuon = 0;
         ClassHoTroKH HT = new ClassHoTroKH();
         private void ClassDSKhHoTro_Load(object sender, EventArgs e)
         {
@@ -79,6 +79,10 @@ namespace BanHangDienTU
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if ( MaPhieuMuon == 0 && TinhTrang =="")
+            {
+                MessageBox.Show("Vui lòng chọn hàng ");
+            }
             HT.ChinhSuaTinhTrang(MaPhieuMuon, "Đã Xử Lý");
             HT.LayDSKH(dataGridView1);
             ClassDSKhHoTro_Load(sender, e);
