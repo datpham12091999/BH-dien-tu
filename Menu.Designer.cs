@@ -68,9 +68,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.đăngNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.traCứuĐHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đặtLịchSửaChữaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.banHangDienTuDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Hinh1)).BeginInit();
@@ -89,12 +89,14 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(323, 49);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label1.Location = new System.Drawing.Point(522, 83);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(572, 38);
+            this.label1.Size = new System.Drawing.Size(587, 43);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Hệ Thống Bán Lẻ Linh Kiện Điện Tử";
+            this.label1.Text = "Cửa Hàng Bán Mô Hình Nhân Vật";
             // 
             // contextMenuStrip1
             // 
@@ -124,9 +126,10 @@
             // 
             // Hinh1
             // 
-            this.Hinh1.Location = new System.Drawing.Point(65, 326);
+            this.Hinh1.Location = new System.Drawing.Point(233, 267);
+            this.Hinh1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Hinh1.Name = "Hinh1";
-            this.Hinh1.Size = new System.Drawing.Size(167, 153);
+            this.Hinh1.Size = new System.Drawing.Size(125, 115);
             this.Hinh1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Hinh1.TabIndex = 4;
             this.Hinh1.TabStop = false;
@@ -136,17 +139,20 @@
             // Ten1
             // 
             this.Ten1.AutoSize = true;
-            this.Ten1.Location = new System.Drawing.Point(113, 531);
+            this.Ten1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ten1.Location = new System.Drawing.Point(235, 390);
+            this.Ten1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Ten1.Name = "Ten1";
-            this.Ten1.Size = new System.Drawing.Size(41, 17);
+            this.Ten1.Size = new System.Drawing.Size(50, 22);
             this.Ten1.TabIndex = 5;
             this.Ten1.Text = "Ten1";
             // 
             // Hinh2
             // 
-            this.Hinh2.Location = new System.Drawing.Point(385, 326);
+            this.Hinh2.Location = new System.Drawing.Point(473, 267);
+            this.Hinh2.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Hinh2.Name = "Hinh2";
-            this.Hinh2.Size = new System.Drawing.Size(167, 153);
+            this.Hinh2.Size = new System.Drawing.Size(125, 115);
             this.Hinh2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Hinh2.TabIndex = 4;
             this.Hinh2.TabStop = false;
@@ -155,9 +161,10 @@
             // 
             // Hinh3
             // 
-            this.Hinh3.Location = new System.Drawing.Point(746, 326);
+            this.Hinh3.Location = new System.Drawing.Point(743, 267);
+            this.Hinh3.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Hinh3.Name = "Hinh3";
-            this.Hinh3.Size = new System.Drawing.Size(167, 153);
+            this.Hinh3.Size = new System.Drawing.Size(125, 115);
             this.Hinh3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Hinh3.TabIndex = 4;
             this.Hinh3.TabStop = false;
@@ -167,53 +174,64 @@
             // Ten2
             // 
             this.Ten2.AutoSize = true;
-            this.Ten2.Location = new System.Drawing.Point(437, 531);
+            this.Ten2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ten2.Location = new System.Drawing.Point(479, 390);
+            this.Ten2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Ten2.Name = "Ten2";
-            this.Ten2.Size = new System.Drawing.Size(41, 17);
+            this.Ten2.Size = new System.Drawing.Size(50, 22);
             this.Ten2.TabIndex = 6;
             this.Ten2.Text = "Ten2";
             // 
             // Ten3
             // 
             this.Ten3.AutoSize = true;
-            this.Ten3.Location = new System.Drawing.Point(801, 531);
+            this.Ten3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ten3.Location = new System.Drawing.Point(751, 390);
+            this.Ten3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Ten3.Name = "Ten3";
-            this.Ten3.Size = new System.Drawing.Size(41, 17);
+            this.Ten3.Size = new System.Drawing.Size(50, 22);
             this.Ten3.TabIndex = 6;
             this.Ten3.Text = "Ten3";
             // 
             // Gia1
             // 
             this.Gia1.AutoSize = true;
-            this.Gia1.Location = new System.Drawing.Point(116, 567);
+            this.Gia1.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gia1.Location = new System.Drawing.Point(265, 411);
+            this.Gia1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Gia1.Name = "Gia1";
-            this.Gia1.Size = new System.Drawing.Size(38, 17);
+            this.Gia1.Size = new System.Drawing.Size(36, 16);
             this.Gia1.TabIndex = 5;
             this.Gia1.Text = "Gia1";
             // 
             // Gia3
             // 
             this.Gia3.AutoSize = true;
-            this.Gia3.Location = new System.Drawing.Point(801, 567);
+            this.Gia3.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gia3.Location = new System.Drawing.Point(774, 411);
+            this.Gia3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Gia3.Name = "Gia3";
-            this.Gia3.Size = new System.Drawing.Size(46, 17);
+            this.Gia3.Size = new System.Drawing.Size(43, 16);
             this.Gia3.TabIndex = 6;
             this.Gia3.Text = "label3";
             // 
             // Gia2
             // 
             this.Gia2.AutoSize = true;
-            this.Gia2.Location = new System.Drawing.Point(437, 567);
+            this.Gia2.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gia2.Location = new System.Drawing.Point(501, 411);
+            this.Gia2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Gia2.Name = "Gia2";
-            this.Gia2.Size = new System.Drawing.Size(46, 17);
+            this.Gia2.Size = new System.Drawing.Size(43, 16);
             this.Gia2.TabIndex = 6;
             this.Gia2.Text = "label3";
             // 
             // Hinh5
             // 
-            this.Hinh5.Location = new System.Drawing.Point(65, 608);
+            this.Hinh5.Location = new System.Drawing.Point(233, 504);
+            this.Hinh5.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Hinh5.Name = "Hinh5";
-            this.Hinh5.Size = new System.Drawing.Size(167, 153);
+            this.Hinh5.Size = new System.Drawing.Size(125, 115);
             this.Hinh5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Hinh5.TabIndex = 4;
             this.Hinh5.TabStop = false;
@@ -222,9 +240,10 @@
             // 
             // Hinh6
             // 
-            this.Hinh6.Location = new System.Drawing.Point(385, 608);
+            this.Hinh6.Location = new System.Drawing.Point(473, 504);
+            this.Hinh6.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Hinh6.Name = "Hinh6";
-            this.Hinh6.Size = new System.Drawing.Size(167, 153);
+            this.Hinh6.Size = new System.Drawing.Size(125, 115);
             this.Hinh6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Hinh6.TabIndex = 4;
             this.Hinh6.TabStop = false;
@@ -233,9 +252,10 @@
             // 
             // Hinh7
             // 
-            this.Hinh7.Location = new System.Drawing.Point(746, 608);
+            this.Hinh7.Location = new System.Drawing.Point(743, 504);
+            this.Hinh7.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Hinh7.Name = "Hinh7";
-            this.Hinh7.Size = new System.Drawing.Size(167, 153);
+            this.Hinh7.Size = new System.Drawing.Size(125, 115);
             this.Hinh7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Hinh7.TabIndex = 4;
             this.Hinh7.TabStop = false;
@@ -245,62 +265,75 @@
             // Ten5
             // 
             this.Ten5.AutoSize = true;
-            this.Ten5.Location = new System.Drawing.Point(101, 796);
+            this.Ten5.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ten5.Location = new System.Drawing.Point(237, 621);
+            this.Ten5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Ten5.Name = "Ten5";
-            this.Ten5.Size = new System.Drawing.Size(41, 17);
+            this.Ten5.Size = new System.Drawing.Size(50, 22);
             this.Ten5.TabIndex = 5;
             this.Ten5.Text = "Ten1";
             // 
             // Gia5
             // 
             this.Gia5.AutoSize = true;
-            this.Gia5.Location = new System.Drawing.Point(96, 849);
+            this.Gia5.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gia5.Location = new System.Drawing.Point(258, 643);
+            this.Gia5.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Gia5.Name = "Gia5";
-            this.Gia5.Size = new System.Drawing.Size(46, 17);
+            this.Gia5.Size = new System.Drawing.Size(43, 16);
             this.Gia5.TabIndex = 5;
             this.Gia5.Text = "label2";
             // 
             // Ten6
             // 
             this.Ten6.AutoSize = true;
-            this.Ten6.Location = new System.Drawing.Point(437, 796);
+            this.Ten6.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ten6.Location = new System.Drawing.Point(489, 621);
+            this.Ten6.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Ten6.Name = "Ten6";
-            this.Ten6.Size = new System.Drawing.Size(41, 17);
+            this.Ten6.Size = new System.Drawing.Size(50, 22);
             this.Ten6.TabIndex = 6;
             this.Ten6.Text = "Ten2";
             // 
             // Gia6
             // 
             this.Gia6.AutoSize = true;
-            this.Gia6.Location = new System.Drawing.Point(432, 849);
+            this.Gia6.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gia6.Location = new System.Drawing.Point(501, 643);
+            this.Gia6.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Gia6.Name = "Gia6";
-            this.Gia6.Size = new System.Drawing.Size(46, 17);
+            this.Gia6.Size = new System.Drawing.Size(43, 16);
             this.Gia6.TabIndex = 6;
             this.Gia6.Text = "label3";
             // 
             // Ten7
             // 
             this.Ten7.AutoSize = true;
-            this.Ten7.Location = new System.Drawing.Point(801, 796);
+            this.Ten7.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ten7.Location = new System.Drawing.Point(752, 621);
+            this.Ten7.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Ten7.Name = "Ten7";
-            this.Ten7.Size = new System.Drawing.Size(41, 17);
+            this.Ten7.Size = new System.Drawing.Size(50, 22);
             this.Ten7.TabIndex = 6;
             this.Ten7.Text = "Ten3";
             // 
             // Gia7
             // 
             this.Gia7.AutoSize = true;
-            this.Gia7.Location = new System.Drawing.Point(796, 849);
+            this.Gia7.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gia7.Location = new System.Drawing.Point(774, 643);
+            this.Gia7.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Gia7.Name = "Gia7";
-            this.Gia7.Size = new System.Drawing.Size(46, 17);
+            this.Gia7.Size = new System.Drawing.Size(43, 16);
             this.Gia7.TabIndex = 6;
             this.Gia7.Text = "label3";
             // 
             // Hinh4
             // 
-            this.Hinh4.Location = new System.Drawing.Point(1062, 326);
+            this.Hinh4.Location = new System.Drawing.Point(979, 267);
+            this.Hinh4.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Hinh4.Name = "Hinh4";
-            this.Hinh4.Size = new System.Drawing.Size(167, 153);
+            this.Hinh4.Size = new System.Drawing.Size(125, 115);
             this.Hinh4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Hinh4.TabIndex = 4;
             this.Hinh4.TabStop = false;
@@ -309,9 +342,10 @@
             // 
             // Hinh8
             // 
-            this.Hinh8.Location = new System.Drawing.Point(1062, 608);
+            this.Hinh8.Location = new System.Drawing.Point(979, 504);
+            this.Hinh8.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Hinh8.Name = "Hinh8";
-            this.Hinh8.Size = new System.Drawing.Size(167, 153);
+            this.Hinh8.Size = new System.Drawing.Size(125, 115);
             this.Hinh8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Hinh8.TabIndex = 4;
             this.Hinh8.TabStop = false;
@@ -320,9 +354,10 @@
             // 
             // Hinh9
             // 
-            this.Hinh9.Location = new System.Drawing.Point(1444, 326);
+            this.Hinh9.Location = new System.Drawing.Point(1230, 267);
+            this.Hinh9.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Hinh9.Name = "Hinh9";
-            this.Hinh9.Size = new System.Drawing.Size(167, 153);
+            this.Hinh9.Size = new System.Drawing.Size(125, 115);
             this.Hinh9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Hinh9.TabIndex = 4;
             this.Hinh9.TabStop = false;
@@ -332,62 +367,75 @@
             // Ten4
             // 
             this.Ten4.AutoSize = true;
-            this.Ten4.Location = new System.Drawing.Point(1107, 531);
+            this.Ten4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ten4.Location = new System.Drawing.Point(981, 390);
+            this.Ten4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Ten4.Name = "Ten4";
-            this.Ten4.Size = new System.Drawing.Size(41, 17);
+            this.Ten4.Size = new System.Drawing.Size(50, 22);
             this.Ten4.TabIndex = 5;
             this.Ten4.Text = "Ten4";
             // 
             // Gia4
             // 
             this.Gia4.AutoSize = true;
-            this.Gia4.Location = new System.Drawing.Point(1107, 567);
+            this.Gia4.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gia4.Location = new System.Drawing.Point(1016, 411);
+            this.Gia4.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Gia4.Name = "Gia4";
-            this.Gia4.Size = new System.Drawing.Size(46, 17);
+            this.Gia4.Size = new System.Drawing.Size(40, 16);
             this.Gia4.TabIndex = 5;
             this.Gia4.Text = "label2";
             // 
             // Ten8
             // 
             this.Ten8.AutoSize = true;
-            this.Ten8.Location = new System.Drawing.Point(1107, 796);
+            this.Ten8.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ten8.Location = new System.Drawing.Point(980, 621);
+            this.Ten8.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Ten8.Name = "Ten8";
-            this.Ten8.Size = new System.Drawing.Size(41, 17);
+            this.Ten8.Size = new System.Drawing.Size(50, 22);
             this.Ten8.TabIndex = 6;
             this.Ten8.Text = "Ten2";
             // 
             // Gia8
             // 
             this.Gia8.AutoSize = true;
-            this.Gia8.Location = new System.Drawing.Point(1102, 849);
+            this.Gia8.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gia8.Location = new System.Drawing.Point(1003, 643);
+            this.Gia8.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Gia8.Name = "Gia8";
-            this.Gia8.Size = new System.Drawing.Size(46, 17);
+            this.Gia8.Size = new System.Drawing.Size(43, 16);
             this.Gia8.TabIndex = 6;
             this.Gia8.Text = "label3";
             // 
             // Ten9
             // 
             this.Ten9.AutoSize = true;
-            this.Ten9.Location = new System.Drawing.Point(1501, 514);
+            this.Ten9.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ten9.Location = new System.Drawing.Point(1241, 390);
+            this.Ten9.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Ten9.Name = "Ten9";
-            this.Ten9.Size = new System.Drawing.Size(41, 17);
+            this.Ten9.Size = new System.Drawing.Size(50, 22);
             this.Ten9.TabIndex = 6;
             this.Ten9.Text = "Ten3";
             // 
             // Gia9
             // 
             this.Gia9.AutoSize = true;
-            this.Gia9.Location = new System.Drawing.Point(1501, 567);
+            this.Gia9.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gia9.Location = new System.Drawing.Point(1270, 411);
+            this.Gia9.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Gia9.Name = "Gia9";
-            this.Gia9.Size = new System.Drawing.Size(46, 17);
+            this.Gia9.Size = new System.Drawing.Size(40, 16);
             this.Gia9.TabIndex = 6;
             this.Gia9.Text = "label3";
             // 
             // Hinh10
             // 
-            this.Hinh10.Location = new System.Drawing.Point(1444, 608);
+            this.Hinh10.Location = new System.Drawing.Point(1230, 504);
+            this.Hinh10.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Hinh10.Name = "Hinh10";
-            this.Hinh10.Size = new System.Drawing.Size(167, 153);
+            this.Hinh10.Size = new System.Drawing.Size(125, 115);
             this.Hinh10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Hinh10.TabIndex = 4;
             this.Hinh10.TabStop = false;
@@ -397,78 +445,89 @@
             // Ten10
             // 
             this.Ten10.AutoSize = true;
-            this.Ten10.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Ten10.Location = new System.Drawing.Point(1487, 796);
+            this.Ten10.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ten10.Location = new System.Drawing.Point(1241, 621);
+            this.Ten10.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Ten10.Name = "Ten10";
-            this.Ten10.Size = new System.Drawing.Size(43, 17);
+            this.Ten10.Size = new System.Drawing.Size(50, 22);
             this.Ten10.TabIndex = 6;
             this.Ten10.Text = "Ten3";
             // 
             // Gia10
             // 
             this.Gia10.AutoSize = true;
-            this.Gia10.Location = new System.Drawing.Point(1484, 849);
+            this.Gia10.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Gia10.Location = new System.Drawing.Point(1270, 643);
+            this.Gia10.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.Gia10.Name = "Gia10";
-            this.Gia10.Size = new System.Drawing.Size(46, 17);
+            this.Gia10.Size = new System.Drawing.Size(43, 16);
             this.Gia10.TabIndex = 6;
             this.Gia10.Text = "label3";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(317, 124);
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.textBox1.Location = new System.Drawing.Point(513, 131);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(596, 22);
+            this.textBox1.Size = new System.Drawing.Size(463, 31);
             this.textBox1.TabIndex = 7;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(938, 122);
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1019, 131);
+            this.button1.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 24);
+            this.button1.Size = new System.Drawing.Size(111, 32);
             this.button1.TabIndex = 8;
             this.button1.Text = "Tìm Kiếm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.đăngNhậpToolStripMenuItem,
             this.traCứuĐHToolStripMenuItem,
-            this.đặtLịchSửaChữaToolStripMenuItem});
+            this.đặtLịchSửaChữaToolStripMenuItem,
+            this.đăngXuấtToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1920, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1440, 28);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // đăngNhậpToolStripMenuItem
-            // 
-            this.đăngNhậpToolStripMenuItem.Name = "đăngNhậpToolStripMenuItem";
-            this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
-            this.đăngNhậpToolStripMenuItem.Text = "Đăng Nhập";
-            this.đăngNhậpToolStripMenuItem.Click += new System.EventHandler(this.đăngNhậpToolStripMenuItem_Click);
             // 
             // traCứuĐHToolStripMenuItem
             // 
             this.traCứuĐHToolStripMenuItem.Name = "traCứuĐHToolStripMenuItem";
-            this.traCứuĐHToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
-            this.traCứuĐHToolStripMenuItem.Text = "Tra Cứu ĐH";
+            this.traCứuĐHToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
+            this.traCứuĐHToolStripMenuItem.Text = "Tra Cứu Đơn Hàng";
             this.traCứuĐHToolStripMenuItem.Click += new System.EventHandler(this.traCứuĐHToolStripMenuItem_Click);
             // 
             // đặtLịchSửaChữaToolStripMenuItem
             // 
             this.đặtLịchSửaChữaToolStripMenuItem.Name = "đặtLịchSửaChữaToolStripMenuItem";
-            this.đặtLịchSửaChữaToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
-            this.đặtLịchSửaChữaToolStripMenuItem.Text = "Đặt lịch Sửa Chữa";
+            this.đặtLịchSửaChữaToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
+            this.đặtLịchSửaChữaToolStripMenuItem.Text = "Bảo Hành";
             this.đặtLịchSửaChữaToolStripMenuItem.Click += new System.EventHandler(this.đặtLịchSửaChữaToolStripMenuItem_Click);
+            // 
+            // đăngXuấtToolStripMenuItem
+            // 
+            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
+            this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1920, 1051);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1440, 708);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
@@ -504,11 +563,13 @@
             this.Controls.Add(this.Hinh1);
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Font = new System.Drawing.Font("Times New Roman", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu";
+            this.Text = "THÔNG TIN SẢN PHẨM";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.Load += new System.EventHandler(this.Menu_Load);
@@ -572,8 +633,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem đăngNhậpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem traCứuĐHToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đặtLịchSửaChữaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
     }
 }

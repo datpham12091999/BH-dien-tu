@@ -40,9 +40,13 @@ namespace BanHangDienTU
 
         private void BtThanhToan_Click(object sender, EventArgs e)
         {
-            if (txtHoTen.Text == "" || TXTdiachi.Text == "" || TXTEmail.Text ==""|| TXTSDT.Text=="")
+            if (txtHoTen.Text == "" || TXTdiachi.Text == "" || TXTEmail.Text == "" || TXTSDT.Text == "")
             {
-                MessageBox.Show("Xin vui long dien tat ca thong tin ");
+                MessageBox.Show("Vui lòng điền thông tin!!");
+            }
+            else if (TXTSDT.Text.Length < 10 | TXTSDT.Text.Length > 10)
+            {
+                MessageBox.Show("SĐT phải có 10 chữ số!!");
             }
             else
             {
@@ -89,11 +93,6 @@ namespace BanHangDienTU
 
                 }
             }
-            
-
-            
-           
-
         }
 
         private void ThanhToan_FormClosing(object sender, FormClosingEventArgs e)
@@ -112,9 +111,10 @@ namespace BanHangDienTU
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Cart c = new Cart();
+            GioHang c = new GioHang();
             c.ShowDialog();
             this.Close();
         }
+        
     }
 }

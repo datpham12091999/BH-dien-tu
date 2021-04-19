@@ -41,15 +41,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(497, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 32);
+            this.label1.Size = new System.Drawing.Size(486, 38);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Kết Quả Tìm Kiếm";
+            this.label1.Text = "Thông Tin Tìm Kiếm Sản Phẩm";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(33, 291);
             this.dataGridView1.Name = "dataGridView1";
@@ -62,17 +63,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(175, 228);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(268, 468);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 32);
+            this.label2.Size = new System.Drawing.Size(90, 35);
             this.label2.TabIndex = 2;
             this.label2.Text = "label2";
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(328, 101);
+            this.textBox1.Location = new System.Drawing.Point(327, 128);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(705, 30);
             this.textBox1.TabIndex = 3;
@@ -80,18 +81,18 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(124, 101);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(143, 133);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 25);
+            this.label3.Size = new System.Drawing.Size(130, 23);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Tìm Kiếm ";
+            this.label3.Text = "Tên Sản Phẩm";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1121, 101);
+            this.button1.Location = new System.Drawing.Point(1120, 119);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 30);
+            this.button1.Size = new System.Drawing.Size(147, 48);
             this.button1.TabIndex = 5;
             this.button1.Text = "Tìm Kiếm ";
             this.button1.UseVisualStyleBackColor = true;
@@ -100,11 +101,11 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(13, 13);
+            this.button2.Location = new System.Drawing.Point(1135, 764);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(186, 53);
             this.button2.TabIndex = 6;
-            this.button2.Text = "Quay lại";
+            this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -112,6 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Turquoise;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -121,7 +123,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "TimKiem";
-            this.Text = "TimKiem";
+            this.Text = "Tìm Kiếm ";
             this.Load += new System.EventHandler(this.TimKiem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

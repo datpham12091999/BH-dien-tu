@@ -31,7 +31,7 @@ namespace BanHangDienTU
 
             if (txtdangnhap.Text == "" || txtmatkhau.Text == "")
             {
-                MessageBox.Show("ten dang nhap hoac mat khau khong duoc de trong");
+                MessageBox.Show("Tên đăng nhập và mật khẩu không được trống !!");
             }
             else
             {
@@ -39,7 +39,7 @@ namespace BanHangDienTU
 
                 if (kq == 1)
                 {
-                    MessageBox.Show(" dang nhap thanh cong");
+                    MessageBox.Show("Đăng nhập thành công!!");
                     this.Hide();
                     Menu MN = new Menu();
                     MN.ShowDialog();
@@ -49,18 +49,44 @@ namespace BanHangDienTU
                 }
                 else if (kq == 2)
                 {
-                    MessageBox.Show(" sai ten dang nhap ");
+                    MessageBox.Show("Sai tên đăng nhập!!");
                 }
                 else if (kq == 3)
                 {
-                    MessageBox.Show(" sai mat khau");
+                    MessageBox.Show("Sai mật khẩu!!");
 
                 }
                 else
-                    MessageBox.Show(" sai ten dang nhap va mat khau ");
+                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!!");
             }
 
 
+        }
+
+        private void txtmatkhau_TextChanged(object sender, EventArgs e)
+        {
+            txtmatkhau.PasswordChar = '*';
+            txtmatkhau.MaxLength = 15;
+        }
+
+        private void BTDANGKY_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DangKi f = new DangKi();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                txtmatkhau.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                txtmatkhau.UseSystemPasswordChar = false;
+            }
         }
     }
 }

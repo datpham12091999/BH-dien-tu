@@ -27,7 +27,7 @@ namespace BanHangDienTU
             if ( dataGridView1.Rows[0].Cells[0].Value == null)
             {
                 dataGridView1.Visible = false;
-                label2.Text = " Không có sản phẩm mà bạn tìm kiếm mời bạn tìm lại ";
+                label2.Text = "Không có sản phẩm, nhập lại tên sản phẩm!!";
                 label2.Visible = true;
             }
             dataGridView1.Columns[2].Visible = false;
@@ -43,7 +43,7 @@ namespace BanHangDienTU
             if (e.RowIndex >= 0)
             {
                 dataGridView1.CurrentCell.Selected = true;
-                CTSP CT = new CTSP();
+                ChiTietSanPham CT = new ChiTietSanPham();
                 CT.ma = int.Parse(dataGridView1.Rows[e.RowIndex].Cells["MaSP"].Value.ToString());
                 this.Hide();
                 CT.ShowDialog();
@@ -57,18 +57,27 @@ namespace BanHangDienTU
         {
             
             ClassTimKiem TK2 = new ClassTimKiem();
-            TK2.TimKiemSanPham(dataGridView1, textBox1.Text);
-            if (dataGridView1.Rows[0].Cells[0].Value == null)
+            if (textBox1.Text == "")
             {
-                dataGridView1.Visible = false;
-                label2.Text = " Không có sản phẩm mà bạn tìm kiếm mời bạn tìm lại ";
-                label2.Visible = true;
+                MessageBox.Show("Vui lòng nhập tên sản phẩm!!");
             }
             else
             {
-                dataGridView1.Visible = true;
-                label2.Visible = false;
+                TK2.TimKiemSanPham(dataGridView1, textBox1.Text);
+                if (dataGridView1.Rows[0].Cells[0].Value == null)
+                {
+                    dataGridView1.Visible = false;
+                    label2.Text = "Không có sản phẩm, nhập lại tên sản phẩm!!";
+                    label2.Visible = true;
+                }
+                else
+                {
+                    dataGridView1.Visible = true;
+                    label2.Visible = false;
+                }
             }
+            
+            
 
         }
 

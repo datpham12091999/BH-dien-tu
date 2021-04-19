@@ -32,11 +32,11 @@ namespace BanHangDienTU
             textBox1.Text = DNW.ChuanHoa(s);
             textBox2.Text = DNW.ChuanHoa(a);
 
-            Class1 Kiemtra = new Class1();
+            ClassKiemTraDangKy Kiemtra = new ClassKiemTraDangKy();
             DangNhapWeb KT1 = new DangNhapWeb();
             bool KT = Kiemtra.KiemTraDangKi(textBox1.Text, textBox2.Text);
             int KQ = KT1.KiemTraTK(textBox1.Text);
-            if ( textBox1.Text != "" && textBox2.Text != ""  && KT == true && SDT.Text != "" && Email.Text != "" && DiaChi.Text != "" && HoTen.Text != "" && KQ == 0 && SDT.Text.Length == 10)
+            if (textBox1.Text != "" && textBox2.Text != "" && KT == true && SDT.Text != "" && Email.Text != "" && DiaChi.Text != "" && HoTen.Text != "" && KQ == 0 && SDT.Text.Length == 10)
             {
                 DangKy Dk = new DangKy();
                 DangNhap DN;
@@ -52,31 +52,53 @@ namespace BanHangDienTU
                 f.ShowDialog();
                 this.Close();
             }
-            else if (SDT.Text.Length < 10 | SDT.Text.Length > 10 )
+            else if (SDT.Text.Length < 10 | SDT.Text.Length > 10)
             {
-                MessageBox.Show("SDT phai la 10 so");
-
+                MessageBox.Show("SDT phai la 10 so");  
             }
             else if (SDT.Text == "" | Email.Text == "" | DiaChi.Text == "" | HoTen.Text == "" | textBox1.Text == "" | textBox2.Text == "")
             {
-                MessageBox.Show(" Vui long dien vao tat ca thong tin");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!!");
             }
             else if (KT == false)
             {
-                MessageBox.Show(" Mat Khau khong hop le phai co 1 chu hoa va 1 chu thuong va 1 chu so va co 8 ki tu tro len ");
+                MessageBox.Show("Mật khẩu phải có 8 chữ số (1 chữ hoa, 1 chữ thường và số)");
             }
-            else if ( KQ == 1 )
+            else if (KQ == 1)
             {
-                MessageBox.Show(" ten TK bi trung moi nhap Ten TK khac");
+                MessageBox.Show("Tên tài khoản đã tồn tại!!");
             }
         }
 
         private void SDT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar) )
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
-           
-
         }
+        private void BTQuayLai_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 DN = new Form1();
+            DN.ShowDialog();
+            this.Close();
+        }
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textBox2.PasswordChar = '*';
+            textBox2.MaxLength = 15;
+        }
+        private void CBHide_CheckedChanged(object sender, EventArgs e)
+        {
+            if(CBHide.Checked)
+            {
+                textBox2.UseSystemPasswordChar = true;
+            }    
+            else
+            {
+                textBox2.UseSystemPasswordChar = false;
+            }    
+        }
+
+       
     }
 }

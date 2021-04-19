@@ -53,24 +53,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BanHangDienTuDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Cart.cs">
+    <Compile Include="GioHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cart.Designer.cs">
-      <DependentUpon>Cart.cs</DependentUpon>
+    <Compile Include="GioHang.Designer.cs">
+      <DependentUpon>GioHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ClassKiemTraDangKy.cs" />
     <Compile Include="ClassCTSP.cs" />
     <Compile Include="ClassGioHang.cs" />
     <Compile Include="ClassMenu.cs" />
-    <Compile Include="ClassSuaChua.cs" />
+    <Compile Include="ClassBaoHanh.cs" />
     <Compile Include="ClassThanhToan.cs" />
     <Compile Include="ClassTimKiem.cs" />
-    <Compile Include="CTSP.cs">
+    <Compile Include="ChiTietSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CTSP.Designer.cs">
-      <DependentUpon>CTSP.cs</DependentUpon>
+    <Compile Include="ChiTietSanPham.Designer.cs">
+      <DependentUpon>ChiTietSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="DangKi.cs">
       <SubType>Form</SubType>
@@ -92,23 +92,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
-    <Compile Include="DatLichSuaChua.cs">
+    <Compile Include="Baohanh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DatLichSuaChua.Designer.cs">
-      <DependentUpon>DatLichSuaChua.cs</DependentUpon>
+    <Compile Include="Baohanh.Designer.cs">
+      <DependentUpon>Baohanh.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCTDH.cs">
+    <Compile Include="ChiTietDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCTDH.Designer.cs">
-      <DependentUpon>FormCTDH.cs</DependentUpon>
+    <Compile Include="ChiTietDonHang.Designer.cs">
+      <DependentUpon>ChiTietDonHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="TKDH.cs">
+    <Compile Include="ThongTinDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TKDH.Designer.cs">
-      <DependentUpon>TKDH.cs</DependentUpon>
+    <Compile Include="ThongTinDonHang.Designer.cs">
+      <DependentUpon>ThongTinDonHang.cs</DependentUpon>
     </Compile>
     <Compile Include="ThanhToan.cs">
       <SubType>Form</SubType>
@@ -130,11 +130,11 @@
     <Compile Include="TimKiem.Designer.cs">
       <DependentUpon>TimKiem.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Cart.resx">
-      <DependentUpon>Cart.cs</DependentUpon>
+    <EmbeddedResource Include="GioHang.resx">
+      <DependentUpon>GioHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CTSP.resx">
-      <DependentUpon>CTSP.cs</DependentUpon>
+    <EmbeddedResource Include="ChiTietSanPham.resx">
+      <DependentUpon>ChiTietSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DangKi.resx">
       <DependentUpon>DangKi.cs</DependentUpon>
@@ -142,14 +142,14 @@
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DatLichSuaChua.resx">
-      <DependentUpon>DatLichSuaChua.cs</DependentUpon>
+    <EmbeddedResource Include="Baohanh.resx">
+      <DependentUpon>Baohanh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCTDH.resx">
-      <DependentUpon>FormCTDH.cs</DependentUpon>
+    <EmbeddedResource Include="ChiTietDonHang.resx">
+      <DependentUpon>ChiTietDonHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TKDH.resx">
-      <DependentUpon>TKDH.cs</DependentUpon>
+    <EmbeddedResource Include="ThongTinDonHang.resx">
+      <DependentUpon>ThongTinDonHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

@@ -66,7 +66,7 @@ namespace BanHangDienTU
 
         private void Hinh1_Click(object sender, EventArgs e)
         {
-            CTSP CT = new CTSP();
+            ChiTietSanPham CT = new ChiTietSanPham();
             CT.ma = 1;
             this.Hide();
             CT.ShowDialog();
@@ -76,7 +76,7 @@ namespace BanHangDienTU
 
         private void Hinh2_Click(object sender, EventArgs e)
         {
-            CTSP CT = new CTSP();
+            ChiTietSanPham CT = new ChiTietSanPham();
             CT.ma = 2;
             this.Hide();
             CT.ShowDialog();
@@ -86,7 +86,7 @@ namespace BanHangDienTU
 
         private void Hinh3_Click(object sender, EventArgs e)
         {
-            CTSP CT = new CTSP();
+            ChiTietSanPham CT = new ChiTietSanPham();
             CT.ma = 3;
             this.Hide();
             CT.ShowDialog();
@@ -95,7 +95,7 @@ namespace BanHangDienTU
 
         private void Hinh4_Click(object sender, EventArgs e)
         {
-            CTSP CT = new CTSP();
+            ChiTietSanPham CT = new ChiTietSanPham();
             CT.ma = 4;
             this.Hide();
             CT.ShowDialog();
@@ -104,7 +104,7 @@ namespace BanHangDienTU
 
         private void Hinh5_Click(object sender, EventArgs e)
         {
-            CTSP CT = new CTSP();
+            ChiTietSanPham CT = new ChiTietSanPham();
             CT.ma = 5;
             this.Hide();
             CT.ShowDialog();
@@ -113,7 +113,7 @@ namespace BanHangDienTU
 
         private void Hinh6_Click(object sender, EventArgs e)
         {
-            CTSP CT = new CTSP();
+            ChiTietSanPham CT = new ChiTietSanPham();
             CT.ma = 6;
             this.Hide();
             CT.ShowDialog();
@@ -122,7 +122,7 @@ namespace BanHangDienTU
 
         private void Hinh7_Click(object sender, EventArgs e)
         {
-            CTSP CT = new CTSP();
+            ChiTietSanPham CT = new ChiTietSanPham();
             CT.ma = 7;
             this.Hide();
             CT.ShowDialog();
@@ -131,7 +131,7 @@ namespace BanHangDienTU
 
         private void Hinh8_Click(object sender, EventArgs e)
         {
-            CTSP CT = new CTSP();
+            ChiTietSanPham CT = new ChiTietSanPham();
             CT.ma = 8;
             this.Hide();
             CT.ShowDialog();
@@ -140,7 +140,7 @@ namespace BanHangDienTU
 
         private void Hinh9_Click(object sender, EventArgs e)
         {
-            CTSP CT = new CTSP();
+            ChiTietSanPham CT = new ChiTietSanPham();
             CT.ma = 9;
             this.Hide();
             CT.ShowDialog();
@@ -149,7 +149,7 @@ namespace BanHangDienTU
 
         private void Hinh10_Click(object sender, EventArgs e)
         {
-            CTSP CT = new CTSP();
+            ChiTietSanPham CT = new ChiTietSanPham();
             CT.ma = 10;
             this.Hide();
             CT.ShowDialog();
@@ -182,7 +182,7 @@ namespace BanHangDienTU
 
         private void traCứuĐHToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TKDH TK = new TKDH();
+            ThongTinDonHang TK = new ThongTinDonHang();
             this.Hide();
             TK.ShowDialog();
         }
@@ -190,15 +190,15 @@ namespace BanHangDienTU
         private void đặtLịchSửaChữaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            DatLichSuaChua f = new DatLichSuaChua();
+            Baohanh f = new Baohanh();
             f.ShowDialog();
             this.Close();
         }
 
-        private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 f = new Form1();
+             Form1 f = new Form1();
             f.ShowDialog();
             this.Close();
         }
