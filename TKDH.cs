@@ -22,6 +22,7 @@ namespace BanHangDienTU
         {
           lbDC.Visible =LbQuanhuyen.Visible =LbTinhThanh.Visible =  lb1.Visible = lb2.Visible = lb3.Visible = lbMaDH.Visible = lbNgayDH.Visible = lbThanhTien.Visible = false;
             button1.Visible = false;
+            lbNgayDH.Enabled = false;
         }
 
         private void TK_Click(object sender, EventArgs e)

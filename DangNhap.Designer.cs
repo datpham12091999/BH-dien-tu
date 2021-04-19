@@ -39,19 +39,19 @@
             // 
             // txtdangnhap
             // 
-            this.txtdangnhap.Location = new System.Drawing.Point(324, 149);
-            this.txtdangnhap.Multiline = true;
+            this.txtdangnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdangnhap.Location = new System.Drawing.Point(333, 149);
             this.txtdangnhap.Name = "txtdangnhap";
-            this.txtdangnhap.Size = new System.Drawing.Size(395, 46);
+            this.txtdangnhap.Size = new System.Drawing.Size(395, 30);
             this.txtdangnhap.TabIndex = 0;
             // 
             // txtmatkhau
             // 
-            this.txtmatkhau.Location = new System.Drawing.Point(324, 220);
-            this.txtmatkhau.Multiline = true;
+            this.txtmatkhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmatkhau.Location = new System.Drawing.Point(333, 234);
             this.txtmatkhau.Name = "txtmatkhau";
             this.txtmatkhau.PasswordChar = '*';
-            this.txtmatkhau.Size = new System.Drawing.Size(395, 51);
+            this.txtmatkhau.Size = new System.Drawing.Size(395, 30);
             this.txtmatkhau.TabIndex = 1;
             // 
             // label1
@@ -84,6 +84,7 @@
             this.button1.Text = "Đăng Nhập";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Enter += new System.EventHandler(this.button1_Enter);
             // 
             // label3
             // 
@@ -123,6 +124,7 @@
             this.Controls.Add(this.txtdangnhap);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Enter += new System.EventHandler(this.button1_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
