@@ -244,6 +244,8 @@ namespace BanHangDienTU
             this.Close();
 
         }
+
+       
     }
 
 }

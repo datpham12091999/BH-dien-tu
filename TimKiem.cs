@@ -60,18 +60,29 @@ namespace BanHangDienTU
         {
             
             ClassTimKiem TK2 = new ClassTimKiem();
-            TK2.TimKiemSanPham(dataGridView1, textBox1.Text);
-            if (dataGridView1.Rows[0].Cells[0].Value == null)
+            
+            if  (textBox1.Text == "")
             {
-                dataGridView1.Visible = false;
-                label2.Text = " Không có sản phẩm mà bạn tìm kiếm mời bạn tìm lại ";
-                label2.Visible = true;
+                MessageBox.Show("Vui lòng không để trống thanh tìm kiếm");
             }
-            else
+            else 
             {
-                dataGridView1.Visible = true;
-                label2.Visible = false;
+                TK2.TimKiemSanPham(dataGridView1, textBox1.Text);
+                if (dataGridView1.Rows[0].Cells[0].Value == null)
+                {
+                   
+                    dataGridView1.Visible = false;
+                    label2.Text = " Không có sản phẩm mà bạn tìm kiếm mời bạn tìm lại ";
+                    label2.Visible = true;
+                }
+                else
+                {
+                    dataGridView1.Visible = true;
+                    label2.Visible = false;
+                }
+
             }
+           
 
         }
 
@@ -82,6 +93,8 @@ namespace BanHangDienTU
             MN.ShowDialog();
             this.Close();
         }
+
+        
     }
   
 }

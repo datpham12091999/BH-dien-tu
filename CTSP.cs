@@ -99,5 +99,7 @@ namespace BanHangDienTU
 
             this.Close();
         }
+
+       
     }
 }

@@ -32,7 +32,7 @@ namespace BanHangDienTU
             textBox1.Text = DNW.ChuanHoa(s);
             textBox2.Text = DNW.ChuanHoa(a);
 
-            Class1 Kiemtra = new Class1();
+            KiemTraDangKy Kiemtra = new KiemTraDangKy();
             DangNhapWeb KT1 = new DangNhapWeb();
             bool KT = Kiemtra.KiemTraDangKi(textBox1.Text, textBox2.Text);
             int KQ = KT1.KiemTraTK(textBox1.Text);
@@ -52,15 +52,16 @@ namespace BanHangDienTU
                 f.ShowDialog();
                 this.Close();
             }
+            else if (SDT.Text == "" | Email.Text == "" | DiaChi.Text == "" | HoTen.Text == "" | textBox1.Text == "" | textBox2.Text == "")
+            {
+                MessageBox.Show(" Vui long dien vao tat ca thong tin");
+            }
             else if (SDT.Text.Length < 10 | SDT.Text.Length > 10 )
             {
                 MessageBox.Show("SDT phai la 10 so");
 
             }
-            else if (SDT.Text == "" | Email.Text == "" | DiaChi.Text == "" | HoTen.Text == "" | textBox1.Text == "" | textBox2.Text == "")
-            {
-                MessageBox.Show(" Vui long dien vao tat ca thong tin");
-            }
+            
             else if (KT == false)
             {
                 MessageBox.Show(" Mat Khau khong hop le phai co 1 chu hoa va 1 chu thuong va 1 chu so va co 8 ki tu tro len ");
@@ -79,20 +80,18 @@ namespace BanHangDienTU
 
         }
 
-        private void DangKi_FormClosing(object sender, FormClosingEventArgs e)
+       
+        private void ComeBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Cart c = new Cart();
+            Menu c = new Menu();
             c.ShowDialog();
             this.Close();
         }
 
-        private void ComeBack_Click(object sender, EventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Cart c = new Cart();
-            c.ShowDialog();
-            this.Close();
+
         }
     }
 }

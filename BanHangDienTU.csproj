@@ -62,7 +62,7 @@
     <Compile Include="Cart.Designer.cs">
       <DependentUpon>Cart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="KiemTraDangKy.cs" />
     <Compile Include="ClassCTSP.cs" />
     <Compile Include="ClassDSKhHoTro.cs">
       <SubType>Form</SubType>
@@ -108,11 +108,11 @@
     <Compile Include="DatLichSuaChua.Designer.cs">
       <DependentUpon>DatLichSuaChua.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="HoTroKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="HoTroKhachHang.Designer.cs">
+      <DependentUpon>HoTroKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCTDH.cs">
       <SubType>Form</SubType>
@@ -164,8 +164,8 @@
     <EmbeddedResource Include="DatLichSuaChua.resx">
       <DependentUpon>DatLichSuaChua.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="HoTroKhachHang.resx">
+      <DependentUpon>HoTroKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCTDH.resx">
       <DependentUpon>FormCTDH.cs</DependentUpon>

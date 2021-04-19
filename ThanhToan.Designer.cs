@@ -59,6 +59,7 @@
             // 
             // cbTinhThanh
             // 
+            this.cbTinhThanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTinhThanh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTinhThanh.FormattingEnabled = true;
             this.cbTinhThanh.Location = new System.Drawing.Point(197, 447);
@@ -92,7 +93,6 @@
             this.TXTSDT.Name = "TXTSDT";
             this.TXTSDT.Size = new System.Drawing.Size(234, 30);
             this.TXTSDT.TabIndex = 0;
-          
             this.TXTSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXTSDT_KeyPress);
             // 
             // TXTdiachi
@@ -145,6 +145,7 @@
             // 
             // cbQuanHuyen
             // 
+            this.cbQuanHuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbQuanHuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbQuanHuyen.FormattingEnabled = true;
             this.cbQuanHuyen.Location = new System.Drawing.Point(197, 517);
