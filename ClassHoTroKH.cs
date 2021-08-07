@@ -19,7 +19,7 @@ namespace BanHangDienTU
             HoTroKhachHang HT = new HoTroKhachHang();
             HT.HoTenKH = HoTen;
             HT.SĐT = SDT;
-            HT.NgayGio = ngaygio;
+            HT.NgayGio = gaygio;
             HT.DichVu = dichvu;
             HT.LoiNhan = loinhan;
             HT.TinhTrang = tinhtrang;
